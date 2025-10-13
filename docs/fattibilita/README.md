@@ -1,24 +1,25 @@
-Studio di Fattibilità - [Nome Progetto]
+Studio di Fattibilità - [Sito squadra calcistica]
 =======================================
 [TOC]
 
 v0.0.1 - 05/10/25
-**Redatto da:** [Nome e cognome/responsabile]
+**Redatto da:** [Tommaso Guerini,Matteo Bertasa,Gabriele Mutti,Andrea Zecchini/Matteo Bertasa]
 
 # Sommario Esecutivo
 
-**Descrizione sintetica del progetto**: [2-3 righe di sintesi]
-**Scopo principale dello studio**: [Motivazione dell'analisi]
-**Raccomandazione finale**: [Fattibile/NON Fattibile - con motivazione sintetica]
-**Investimento stimato**: [Intervallo di costo]
-**ROI atteso**: [Valore percentuale e temporale]
-**Rischi principali**: [Elenco puntato dei 3-5 rischi critici]
+**Descrizione sintetica del progetto**: [il sito mira a fornire informazioni su una societa sportiva sotto tutti i punti di vista.Per farlo abbiamo inserito  descrizioni e immagini del centro sportivo e delle varie categorie di squadre e di sport che compongono la società ]
+**Scopo principale dello studio**: [acquisizione di nuove conoscenze,retribuzione del sito una volta terminato]
+**Raccomandazione finale**: [Fattibile/  ]
+**Investimento stimato**: [?]
+**ROI atteso**: [?]
+**Rischi principali**: [?]
 
 # 1. Introduzione
 
-**Scopo del documento**: [Descrizione degli obiettivi dello studio di fattibilità]
-**Contesto del progetto**: [Descrizione del contesto]
-**Stakeholder coinvolti**: [Elenco puntato degli stakeholder principali]
+**Scopo del documento**: [Il nostro sito  offre una panoramica completa e dettagliata della società sportiva, presentandola sotto ogni punto di vista. Per questo, abbiamo raccolto e organizzato una serie di contenuti informativi e visivi che raccontano la nostra realtà in modo chiaro e coinvolgente. Attraverso questo progetto,infatti, vogliamo rendere accessibile a tutti — atleti, famiglie, appassionati e nuovi interessati — la nostra passione per lo sport e per l'informatica.]
+
+**Contesto del progetto**: [La realizzazione del sito nasce dalla necessità di digitalizzare e valorizzare l’identità della società sportiva, migliorando la comunicazione interna ed esterna, facilitando l’accesso alle informazioni e promuovendo le attività sportive e formative offerte. In un contesto sempre più orientato alla comunicazione online, il sito rappresenta un punto di riferimento aggiornato e facilmente accessibile da qualsiasi dispositivo.]
+**Stakeholder coinvolti**: [????] 
 
 <br><br>
 
