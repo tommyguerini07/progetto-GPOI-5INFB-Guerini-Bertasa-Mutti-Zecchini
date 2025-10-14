@@ -26,21 +26,56 @@ v0.0.1 - 05/10/25
 # 2. Descrizione del Progetto
 
 ## 2.1 Obiettivi del Progetto
-**Obiettivi del progetto**: [Elenco puntato degli obiettivi principali]
-**Obiettivi secondari**: [Elenco puntato degli obiettivi secondari]
-**KPI di successo**: [Elenco puntato dei principali indicatori di performance]
+**Obiettivi del progetto**:
+[-Creare un sito web ufficiale per la società sportiva.
+-Offrire una presentazione dettagliata e aggiornata delle strutture e delle attività sportive.
+-Rendere accessibili le informazioni a tutte le persone interessate: atleti, famiglie, tifosi e potenziali nuovi iscritti.
+-Migliorare la comunicazione tra la società e i suoi utenti.
+-Valorizzare l'immagine della società sportiva anche in ottica di sponsorizzazioni.]
+
+
+**Obiettivi secondari**: 
+[- Sperimentare e approfondire competenze in ambito digitale e informatico.
+- Promuovere eventi sportivi e attività della società.
+- Incentivare la partecipazione e il senso di appartenenza alla comunità sportiva.]
+
+**KPI di successo**: 
+[- Numero di visitatori unici mensili.
+- Tempo medio di permanenza sul sito.
+- pagine visitate per sessione.
+- Numero di iscrizioni o contatti generati tramite il sito.]
 
 <br>
 
 ## 2.2 Caratteristiche Principali
-**Funzionalità chiave**: [Elenco puntato delle funzionalità principali]
+**Funzionalità chiave**: 
+[- Pagina di presentazione della società sportiva.
+- Sezioni dedicate a ogni categoria di squadra e disciplina sportiva.
+- immagini delle strutture e degli eventi.
+- Calendario eventi e attività.
+- Area contatti.
+- Design responsive per visualizzazione ottimale su smartphone, tablet e PC.
+- Possibilità di aggiornamenti dinamici (news, comunicazioni, risultati).
+- Collegamenti ai profili social della società.]
 
 <br>
 
 ## 2.3 Requisiti Fondamentali
-**Tecnici**: [Infrastrutture, software, hardware, specifiche tecniche]
-**Operativi**: [Processi coinvolti, risorse necessarie]
-**Normativi**: [Conformità richieste, regolamenti]
+**Tecnici**:
+[- Dominio e hosting affidabile.
+- Compatibilità cross-browser e responsive design.
+- Backup automatici e sistema di sicurezza base (SSL, CAPTCHA, ecc.).]
+
+**Operativi**:
+[- Raccolta contenuti (testi, immagini, video, calendario) da parte della società.
+- Gestione editoriale per mantenere aggiornati i contenuti.
+- presenza dell'assistenza societaria in caso di problemi da risolvere.]
+
+**Normativi**:
+[- Conformità al GDPR per la protezione dei dati personali.
+- Informativa sulla privacy e sui cookie ben visibile e accessibile.
+- Accessibilità base per utenti con disabilità.
+- Diritti d’uso per immagini e contenuti pubblicati.]
 
 <br><br>
 
