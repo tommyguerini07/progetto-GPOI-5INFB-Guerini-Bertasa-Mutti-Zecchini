@@ -47,16 +47,20 @@ v0.0.1 - 05/10/25
 # 3. Analisi di Mercato
 
 ## 3.1 Analisi della Domanda
-**Clienti di riferimento**: [Descrizione del target di mercato]
-**Dimensione del mercato**: [Dati quantitativi e qualitativi]
-**Tendenze di mercato**: [Evoluzione del mercato, opportunità emergenti]
+**Clienti di riferimento**: Associazioni sportive di qualsiasi sport e categoria.
+**Dimensione del mercato**: Ampio, proposte accettate anche al di fuori della provincia di Bergamo di società medio-piccole.
+**Tendenze di mercato**: Mercato in continua crescita e occasioni di vendita a società medio-piccole
 
 <br>
 
 ## 3.2 Analisi della Concorrenza
-| Concorrente | Punti di Forza | Punti di Debolezza | Quota di Mercato |
-|-------------|----------------|---------------------|------------------|
-| [Esempio]   | [Esempio]      | [Esempio]           | [Esempio]        |
+| Concorrente  | Punti di Forza  | Punti di Debolezza | Quota di Mercato |
+|------------- |---------------- |--------------------|------------------|
+| X            | -Responsive,    | -No referenti fissi| ?
+|              | -economico,     |   per il progetto  |
+|              |-dati inseribili | - difficoltà di    |
+|              |  manualmente    |   vendita          |       
+ 
 
 <br>
 
@@ -75,8 +79,10 @@ Tabella SWOT:
 
 ## 3.4 Valore per il Cliente
 **Proposta di Valore Unica (UVP)**: [Descrizione della UVP]
-**Benefici per i clienti**: [Elenco puntato dei principali benefici]
-
+**Benefici per i clienti**: -Sito sempre aggiornato
+                            -disponibilità contatti Associazione sportiva
+                            -spese contenute
+                            
 <br><br>
 
 # 4. Analisi Tecnica
