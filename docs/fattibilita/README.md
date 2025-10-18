@@ -113,7 +113,8 @@ Tabella SWOT:
 <br>
 
 ## 3.4 Valore per il Cliente
-**Proposta di Valore Unica (UVP)**: [Descrizione della UVP]
+**Proposta di Valore Unica (UVP)**: Il nostro progetto offre:
+                                        -
 **Benefici per i clienti**: -Sito sempre aggiornato
                             -disponibilità contatti Associazione sportiva
                             -spese contenute
@@ -151,9 +152,9 @@ Tabella SWOT:
 ## 5.1 Stima dei Costi
 | Categoria        | Investimento Iniziale     | Costi annuali (€) |
 |------------------|---------------------------|-------------------|
-| **Personale**    | [Valore]                  | [Valore]          |
-| **Hardware**     | [Valore]                  | [Valore]          |
-| **Software**     | [Valore]                  | [Valore]          |
+| **Personale**    | [0]                       | [0]               |
+| **Hardware**     | [0]                       | [0]               |
+| **Software**     | [0]                       | [Valore]          |
 | **Formazione**   | [Valore]                  | [Valore]          |
 | **Marketing**    | [Valore]                  | [Valore]          |
 | **Altro**        | [Valore]                  | [Valore]          |
