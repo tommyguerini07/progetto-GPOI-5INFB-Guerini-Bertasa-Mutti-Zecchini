@@ -149,27 +149,27 @@ Tabella SWOT:
 
 # 5. Analisi Economica Finanziaria
 
-## 5.1 Stima dei Costi
+## 5.1 Stima dei Costi    
 | Categoria        | Investimento Iniziale     | Costi annuali (€) |
 |------------------|---------------------------|-------------------|
-| **Personale**    | [0]                       | [0]               |
-| **Hardware**     | [0]                       | [0]               |
-| **Software**     | [0]                       | [Valore]          |
-| **Formazione**   | [Valore]                  | [Valore]          |
-| **Marketing**    | [Valore]                  | [Valore]          |
-| **Altro**        | [Valore]                  | [Valore]          |
-| **Totale**       | [Valore]                  | [Valore]          |
+| **Personale**    | [0]                       | [3200]            |
+| **Hardware**     | [0]                       | [100]             |
+| **Software**     | [0]                       | [0]               |
+| **Formazione**   | [0]                       | [0]               |
+| **Marketing**    | [100]                     | [100]             |
+| **Altro**        | [100]                     | [100]             |
+| **Totale**       | [200]                     | [3500]            |
 
 <br>
 
 ## 5.2 Stima dei Ricavi
 | Fonte di Ricavo  | Descrizione               | Ricavi annuali (€) |
 |------------------|---------------------------|--------------------|
-| **Vendite**      | [Descrizione]             | [Valore]           |
-| **Abbonamenti**  | [Descrizione]             | [Valore]           |
-| **Pubblicità**   | [Descrizione]             | [Valore]           |
-| **Altro**        | [Descrizione]             | [Valore]           |
-| **Totale**       |                           | [Valore]           |   
+| **Vendite**      | [Polisportiva]            | [1200]             |
+| **Abbonamenti**  | [mensile]                 | [1200]             |
+| **Pubblicità**   | [Sponsor]                 | [0]                |
+| **Altro**        | [possibilispese ulteriori]| [30]               |
+| **Totale**       |                           | [2430]             |   
 
 [Proiezione di fatturato - meglio se conservative]
 
@@ -177,7 +177,7 @@ Tabella SWOT:
 
 ## 5.3 Indicatori di Redditività
 **ROI (Return on Investment)**: [%] - [Calcolo: (Guadagno - Investimento)/Investimento]
-**Payback Period**: [Numero di mesi/anni per rientrare dall'investimento]
+**Payback Period**: 1,5 anni
 **VAL/NPV (Valore Attuale Netto)**: [Valore] TODO 
 **TIR/IRR (Tasso Interno di Rendimento)**: [%] TODO 
 
@@ -211,9 +211,8 @@ Tabella SWOT:
 ## 7.1 Identificazione dei Rischi
 | Rischio                | Descrizione               | Probabilità (1-5) |
 |-----------------------|---------------------------|-------------------|
-| [Esempio]             | [Esempio]                 | [Valore]
-| [Esempio]             | [Esempio]                 | [Valore]           |
-| [Esempio]             | [Esempio]                 | [Valore]
+|[difficoltà di vendita]| [poche società]           | [3]               |
+| [costo troppo alto]   | [richiesta troppo alta]   | [2]               |
 
 <br><br>
 
@@ -229,7 +228,7 @@ Tabella SWOT:
 <br>
 
 ## 8.2 Tempistiche
-**Durata Totale del Progetto**: [Numero di mesi/anni]
+**Durata Totale del Progetto**: x (variabile a seconda degli abbonamenti fatti)
 **Milestone Principali**: [Elenco puntato delle principali milestone con date previste]
 
 [Gantt - Diagramma di Gantt in allegati]
