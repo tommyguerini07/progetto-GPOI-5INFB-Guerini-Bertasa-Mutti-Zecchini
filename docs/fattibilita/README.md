@@ -3,7 +3,7 @@ Studio di Fattibilità - [Nome Progetto]
 [TOC]
 
 v0.0.1 - 05/10/25
-**Redatto da:** [Nome e cognome/responsabile]
+**Redatto da:** [Guerini Tommaso, Matteo Bertasa, Gabriele Mutti, Andrea Zecchini]
 
 # Sommario Esecutivo
 
