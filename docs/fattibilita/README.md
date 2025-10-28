@@ -1,16 +1,16 @@
-Studio di Fattibilità - [Sito squadra calcistica]
+Studio di Fattibilità - [Sito polisportiva]
 =======================================
 [TOC]
 
 v0.0.1 - 05/10/25
-**Redatto da:** [Tommaso Guerini,Matteo Bertasa,Gabriele Mutti,Andrea Zecchini/Matteo Bertasa]
+**Redatto da:** [Tommaso Guerini,Matteo Bertasa,Gabriele Mutti,Andrea Zecchini]
 
 # Sommario Esecutivo
 
-**Descrizione sintetica del progetto**: [il sito mira a fornire informazioni su una societa sportiva sotto tutti i punti di vista.Per farlo abbiamo inserito  descrizioni e immagini del centro sportivo e delle varie categorie di squadre e di sport che compongono la società ]
+**Descrizione sintetica del progetto**: [il sito mira a fornire informazioni su una societa polisportiva sotto tutti i punti di vista.Per farlo abbiamo inserito  descrizioni e immagini del centro sportivo e delle varie categorie di squadre e di sport che compongono la società ]
 **Scopo principale dello studio**: [acquisizione di nuove conoscenze,retribuzione del sito una volta terminato]
 **Raccomandazione finale**: [Fattibile/  ]
-**Investimento stimato**: [?]
+**Investimento stimato**: [tempo ]
 **ROI atteso**: [?]
 **Rischi principali**: [?]
 
