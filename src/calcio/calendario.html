@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario e Risultati - Polisportiva Albinese</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="calendario.css">
+    <link rel="icon" type="image/png" href="../image.png">
+
+</head>
+<body>
+    <div id="notification" class="notification"></div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="logo-title">
+                <img src="image.png" alt="Polisportiva Albinese Logo" class="logo">
+                <span class="site-title">Polisportiva Albinese</span>
+            </div>
+            <ul class="menu">
+                <li class="dropdown">
+                    <a href="#calcio">Calcio</a>
+                    <ul class="dropdown-content">
+                        <li><a href="squadre.html">Squadre</a></li>
+                        <li><a href="calcio/calndario.html">Calendario</a></li>
+                        <li><a href="#">Risultati</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#pallavolo">Pallavolo</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Squadre</a></li>
+                        <li><a href="#">Calendario</a></li>
+                        <li><a href="#">Risultati</a></li>
+                    </ul>
+                </li>
+                <li><a href="#galleria">Galleria</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>CALENDARIO E RISULTATI</h1>
+        
+        <div class="navigation">
+            <div class="nav-links">
+                <a href="#" class="active" data-team="prima-squadra">PRIMA SQUADRA MASCHILE</a>
+                <a href="#" data-team="primavera">PRIMAVERA</a>
+                <a href="#" data-team="giovanili">GIOVANILI</a>
+            </div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-value" id="played-matches">12</div>
+                <div class="stat-label">Partite Giocate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="wins">8</div>
+                <div class="stat-label">Vittorie</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="draws">3</div>
+                <div class="stat-label">Pareggi</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="losses">1</div>
+                <div class="stat-label">Sconfitte</div>
+            </div>
+        </div>
+
+        <div class="filters">
+            <div class="filter-group">
+                <select id="filter-type">
+                    <option value="all">Completo</option>
+                    <option value="home">Partite in Casa</option>
+                    <option value="away">Partite in Trasferta</option>
+                </select>
+                <select id="filter-season">
+                    <option value="2025-26">2025/26</option>
+                    <option value="2024-25">2024/25</option>
+                </select>
+            </div>
+            <div class="export-options">
+                <button class="export-btn" id="export-calendar"><i class="fas fa-file-export"></i> Esporta Calendario</button>
+                <button class="export-btn" id="add-reminder"><i class="fas fa-bell"></i> Aggiungi Promemoria</button>
+            </div>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Cerca partita...">
+            </div>
+        </div>
+
+        <div class="matches-section" id="upcoming-matches">
+            <h2 class="section-title">
+                <i class="fas fa-home"></i> PROSSIME PARTITE IN CASA
+            </h2>
+        </div>
+
+        <div class="months-nav">
+            <div class="month-controls">
+                <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
+                <div class="current-month" id="current-month">OTTOBRE 2025</div>
+                <button id="next-month"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="months-list" id="months-list">
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="matches-section" id="past-matches">
+            <h2 class="section-title">
+                <i class="far fa-calendar-check"></i> PARTITE PASSATE
+            </h2>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Polisportiva Albinese - Albino (BG)</p>
+    </footer>
+
+    <script>
+        const matchesData = {
+            "prima-squadra": {
+                "2025-26": [
+                    {
+                        id: 1,
+                        date: "2025-11-02",
+                        time: "20:45",
+                        homeTeam: "POLISPORTIVA ALBINESE",
+                        awayTeam: "ALBINESE CALCIO",
+                        competition: "Campionato Regionale",
+                        round: "Giornata 10",
+                        location: "Stadio Comunale, Albino",
+                        status: "upcoming",
+                        type: "home",
+                        result: null
+                    },
+                    {
+                        id: 2,
+                        date: "2025-11-29",
+                        time: "20:45",
+                        homeTeam: "POLISPORTIVA ALBINESE",
+                        awayTeam: "BERGAMO CALCIO",
+                        competition: "Campionato Regionale",
+                        round: "Giornata 13",
+                        location: "Stadio Comunale, Albino",
+                        status: "upcoming",
+                        type: "home",
+                        result: null
+                    },
+                    {
+                        id: 3,
+                        date: "2025-08-17",
+                        time: "21:15",
+                        homeTeam: "POLISPORTIVA ALBINESE",
+                        awayTeam: "SPORT CLUB",
+                        competition: "Coppa Regionale",
+                        round: "Giornata 2",
+                        location: "Stadio Comunale, Albino",
+                        status: "completed",
+                        type: "home",
+                        result: "2-0"
+                    },
+                    {
+                        id: 4,
+                        date: "2025-08-10",
+                        time: "18:00",
+                        homeTeam: "FOOTBALL CLUB",
+                        awayTeam: "POLISPORTIVA ALBINESE",
+                        competition: "Campionato Regionale",
+                        round: "Giornata 1",
+                        location: "Campo Ospiti, Città Ospitante",
+                        status: "completed",
+                        type: "away",
+                        result: "1-1"
+                    }
+                ]
+            },
+            "primavera": {
+                "2025-26": [
+                ]
+            },
+            "giovanili": {
+                "2025-26": [
+                ]
+            }
+        };
+
+        let currentState = {
+            team: "prima-squadra",
+            season: "2025-26",
+            filter: "all",
+            currentMonth: new Date().getMonth(),
+            currentYear: new Date().getFullYear()
+        };
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+            setupEventListeners();
+            renderMatches();
+            generateMonthsList();
+        });
+
+        function initializeApp() {
+            updateCurrentMonthDisplay();
+        }
+
+        function setupEventListeners() {
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector('.nav-links a.active').classList.remove('active');
+                    this.classList.add('active');
+                    currentState.team = this.dataset.team;
+                    renderMatches();
+                    updateStats();
+                });
+            });
+
+            document.getElementById('filter-type').addEventListener('change', function() {
+                currentState.filter = this.value;
+                renderMatches();
+            });
+
+            document.getElementById('filter-season').addEventListener('change', function() {
+                currentState.season = this.value;
+                renderMatches();
+                updateStats();
+            });
+
+            document.getElementById('prev-month').addEventListener('click', goToPreviousMonth);
+            document.getElementById('next-month').addEventListener('click', goToNextMonth);
+            document.getElementById('export-calendar').addEventListener('click', exportCalendar);
+            document.getElementById('add-reminder').addEventListener('click', addReminder);
+
+            document.getElementById('search-input').addEventListener('input', function() {
+                filterMatchesBySearch(this.value);
+            });
+        }
+
+        function renderMatches() {
+            const matches = getFilteredMatches();
+            renderUpcomingMatches(matches);
+            renderPastMatches(matches);
+        }
+
+        function getFilteredMatches() {
+            let matches = matchesData[currentState.team][currentState.season] || [];
+            
+            if (currentState.filter !== 'all') {
+                matches = matches.filter(match => match.type === currentState.filter);
+            }
+            
+            return matches;
+        }
+
+        function renderUpcomingMatches(matches) {
+            const container = document.getElementById('upcoming-matches');
+            const upcomingMatches = matches.filter(match => match.status === 'upcoming');
+            
+            if (upcomingMatches.length === 0) {
+                container.innerHTML = '<h2 class="section-title"><i class="fas fa-home"></i> PROSSIME PARTITE IN CASA</h2><p>Nessuna partita in programma</p>';
+                return;
+            }
+            
+            let html = '<h2 class="section-title"><i class="fas fa-home"></i> PROSSIME PARTITE IN CASA</h2>';
+            
+            upcomingMatches.forEach(match => {
+                html += `
+                <div class="match-card">
+                    <div class="match-status status-upcoming">PROSSIMA</div>
+                    <div class="match-header">
+                        <div class="competition">
+                            <div class="competition-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <span>${match.competition}</span>
+                            <span>${match.round}</span>
+                        </div>
+                        <div class="match-date">
+                            <i class="far fa-calendar"></i> ${formatDate(match.date)}
+                        </div>
+                    </div>
+                    <div class="match-content">
+                        <div class="team">
+                            <div class="team-logo" style="background-image: url('image.png')"></div>
+                            <div class="team-name">${match.homeTeam}</div>
+                        </div>
+                        <div class="match-time">${match.time}</div>
+                        <div class="team home">
+                            <div class="team-logo">${getTeamInitials(match.awayTeam)}</div>
+                            <div class="team-name">${match.awayTeam}</div>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <i class="fas fa-map-marker-alt"></i> ${match.location}
+                    </div>
+                    <a href="#" class="buy-tickets">
+                        <i class="fas fa-ticket-alt"></i> ACQUISTA I BIGLIETTI
+                    </a>
+                </div>`;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        function renderPastMatches(matches) {
+            const container = document.getElementById('past-matches');
+            const pastMatches = matches.filter(match => match.status === 'completed');
+            
+            if (pastMatches.length === 0) {
+                container.innerHTML = '<h2 class="section-title"><i class="far fa-calendar-check"></i> PARTITE PASSATE</h2><p>Nessuna partita disputata</p>';
+                return;
+            }
+            
+            let html = '<h2 class="section-title"><i class="far fa-calendar-check"></i> PARTITE PASSATE</h2>';
+            
+            pastMatches.forEach(match => {
+                const [homeScore, awayScore] = match.result.split('-');
+                const isHomeMatch = match.homeTeam.includes('ALBINESE');
+                
+                html += `
+                <div class="match-card">
+                    <div class="match-status status-completed">TERMINATA</div>
+                    <div class="match-header">
+                        <div class="competition">
+                            <div class="competition-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <span>${match.competition}</span>
+                            <span>${match.round}</span>
+                        </div>
+                        <div class="match-date">
+                            <i class="far fa-calendar"></i> ${formatDate(match.date)} ${match.time}
+                        </div>
+                    </div>
+                    <div class="match-content">
+                        <div class="team">
+                            <div class="team-logo" style="background-image: ${isHomeMatch ? "url('image.png')" : "none"}">${isHomeMatch ? '' : getTeamInitials(match.homeTeam)}</div>
+                            <div class="team-name">${match.homeTeam}</div>
+                        </div>
+                        <div class="match-result">${match.result}</div>
+                        <div class="team home">
+                            <div class="team-logo" style="background-image: ${!isHomeMatch ? "url('image.png')" : "none"}">${!isHomeMatch ? '' : getTeamInitials(match.awayTeam)}</div>
+                            <div class="team-name">${match.awayTeam}</div>
+                        </div>
+                    </div>
+                    <div class="match-info">
+                        <i class="fas fa-map-marker-alt"></i> ${match.location}
+                    </div>
+                    <div>
+                        <a href="#" class="matchcenter-link">
+                            MATCHCENTER <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>`;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        function filterMatchesBySearch(searchTerm) {
+            const matches = getFilteredMatches();
+            const filteredMatches = matches.filter(match => 
+                match.homeTeam.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                match.awayTeam.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                match.competition.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                match.location.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+            
+            renderUpcomingMatches(filteredMatches.filter(m => m.status === 'upcoming'));
+            renderPastMatches(filteredMatches.filter(m => m.status === 'completed'));
+        }
+
+        function generateMonthsList() {
+            const months = ['GEN', 'FEB', 'MAR', 'APR', 'MAG', 'GIU', 'LUG', 'AGO', 'SET', 'OTT', 'NOV', 'DIC'];
+            const container = document.getElementById('months-list');
+            let html = '';
+            
+            months.forEach((month, index) => {
+                const isActive = index === currentState.currentMonth;
+                html += `<a href="#" class="${isActive ? 'active' : ''}" data-month="${index}">${month}</a>`;
+            });
+            
+            container.innerHTML = html;
+            
+            container.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    currentState.currentMonth = parseInt(this.dataset.month);
+                    updateCurrentMonthDisplay();
+                    document.querySelector('#months-list a.active').classList.remove('active');
+                    this.classList.add('active');
+                });
+            });
+        }
+
+        function goToPreviousMonth() {
+            currentState.currentMonth--;
+            if (currentState.currentMonth < 0) {
+                currentState.currentMonth = 11;
+                currentState.currentYear--;
+            }
+            updateCurrentMonthDisplay();
+            updateActiveMonth();
+        }
+
+        function goToNextMonth() {
+            currentState.currentMonth++;
+            if (currentState.currentMonth > 11) {
+                currentState.currentMonth = 0;
+                currentState.currentYear++;
+            }
+            updateCurrentMonthDisplay();
+            updateActiveMonth();
+        }
+
+        function updateCurrentMonthDisplay() {
+            const months = ['GENNAIO', 'FEBBRAIO', 'MARZO', 'APRILE', 'MAGGIO', 'GIUGNO', 
+                           'LUGLIO', 'AGOSTO', 'SETTEMBRE', 'OTTOBRE', 'NOVEMBRE', 'DICEMBRE'];
+            document.getElementById('current-month').textContent = 
+                `${months[currentState.currentMonth]} ${currentState.currentYear}`;
+        }
+
+        function updateActiveMonth() {
+            document.querySelector('#months-list a.active').classList.remove('active');
+            document.querySelector(`#months-list a[data-month="${currentState.currentMonth}"]`).classList.add('active');
+        }
+
+        function updateStats() {
+            
+        }
+
+        function exportCalendar() {
+            showNotification('Calendario esportato con successo!');
+        }
+
+        function addReminder() {
+            showNotification('Promemoria aggiunto per le prossime partite!');
+            
+        }
+
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const days = ['dom', 'lun', 'mar', 'mer', 'gio', 'ven', 'sab'];
+            const months = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
+            
+            const dayName = days[date.getDay()];
+            const day = date.getDate();
+            const month = months[date.getMonth()];
+            
+            return `${dayName} ${day} ${month}`;
+        }
+
+        function getTeamInitials(teamName) {
+            return teamName.split(' ').map(word => word[0]).join('').substring(0, 2);
+        }
+    </script>
+</body>
+</html>
