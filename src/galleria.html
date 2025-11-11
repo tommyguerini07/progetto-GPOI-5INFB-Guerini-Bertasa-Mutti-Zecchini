@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galleria - Polisportiva Albinese</title>
+    <link rel="icon" type="image/png" href="image.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1565c0;
+            --primary-dark: #0d47a1;
+            --primary-light: #e3f2fd;
+            --accent: #ffd600;
+            --text: #222;
+            --text-light: #555;
+            --white: #fff;
+            --shadow: 0 4px 12px rgba(21, 101, 192, 0.15);
+            --shadow-hover: 0 8px 24px rgba(21, 101, 192, 0.25);
+            --radius: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f8fafc 100%);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+        }
+        
+        /* Header e navigazione */
+        header {
+            background: var(--primary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 60px;
+            margin-right: 1rem;
+            border-radius: 50%;
+            box-shadow: var(--shadow);
+            background: var(--white);
+        }
+        
+        .site-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 1px;
+        }
+        
+        .menu {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .menu > li {
+            position: relative;
+        }
+        
+        .menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+        
+        .menu a:hover {
+            background: var(--primary-dark);
+            color: var(--accent);
+            box-shadow: var(--shadow);
+        }
+        
+        .dropdown-content {
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            background: var(--white);
+            min-width: 200px;
+            box-shadow: var(--shadow-hover);
+            z-index: 10;
+            border-radius: var(--radius);
+            top: 100%;
+            left: 0;
+            padding: 0.5rem 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-content li {
+            padding: 0;
+        }
+        
+        .dropdown-content a {
+            color: var(--primary);
+            padding: 0.7rem 1.2rem;
+            display: block;
+            border-radius: 0;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+        
+        .dropdown-content a:hover {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding-left: 1.5rem;
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem 3rem;
+            background: linear-gradient(90deg, var(--primary-light) 60%, #bbdefb 100%);
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .hero-logo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            box-shadow: var(--shadow-hover);
+            margin-bottom: 1.5rem;
+            background: var(--white);
+        }
+        
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Stili specifici per la galleria */
+        .gallery-section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .gallery-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary);
+            font-size: 2rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .filter-btn {
+            background-color: var(--primary-light);
+            border: 1px solid var(--primary);
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        .filter-btn:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .filter-btn.active {
+            background-color: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            aspect-ratio: 4/3;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        /* Modal per visualizzazione ingrandita */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        
+        .modal-caption {
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0,0,0,0.7);
+            font-size: 1.1rem;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: var(--accent);
+        }
+        
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            background-color: rgba(0,0,0,0.5);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .modal-nav:hover {
+            background-color: var(--primary);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .prev {
+            left: 30px;
+        }
+        
+        .next {
+            right: 30px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: auto;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            .navbar {
+                padding: 0.8rem 1.5rem;
+            }
+            
+            .site-title {
+                font-size: 1.5rem;
+            }
+            
+            .menu {
+                gap: 1rem;
+            }
+            
+            .menu a {
+                font-size: 1rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .menu {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--primary);
+                flex-direction: column;
+                align-items: center;
+                padding: 1.5rem 0;
+                gap: 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .menu > li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .menu a {
+                padding: 1rem;
+                justify-content: center;
+                border-radius: 0;
+            }
+            
+            .dropdown-content {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: var(--primary-dark);
+                width: 100%;
+                display: none;
+            }
+            
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+            
+            .dropdown-content a {
+                color: var(--white);
+                padding: 0.8rem 1rem;
+            }
+            
+            .dropdown-content a:hover {
+                background: rgba(255, 255, 255, 0.1);
+                padding-left: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .modal-nav {
+                font-size: 30px;
+                width: 50px;
+                height: 50px;
+            }
+            
+            .prev {
+                left: 15px;
+            }
+            
+            .next {
+                right: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 3rem 1rem 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-logo {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .site-title {
+                font-size: 1.3rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .gallery-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-title">
+                <img src="image.png" alt="Polisportiva Albinese Logo" class="logo">
+                <span class="site-title">Polisportiva Albinese</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="menu" id="mainMenu">
+                <li class="dropdown">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#calcio">Calcio <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="calcio/squadre.html">Squadre</a></li>
+                        <li><a href="calcio/calendario.html">Calendario</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#pallavolo">Pallavolo <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="pallavolo/squadre.html">Squadre</a></li>
+                        <li><a href="pallavolo/calendario.html">Calendario</a></li>
+                    </ul>
+                </li>
+                <li><a href="galleria.html" class="active">Galleria</a></li>
+                <li><a href="contatti.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <img src="image.png" alt="Logo Polisportiva Albinese" class="hero-logo">
+            <h1>Galleria Fotografica</h1>
+            <p class="subtitle">Immagini e momenti della Polisportiva Albinese</p>
+        </section>
+        
+        <section class="gallery-section">
+            <h2>La Nostra Galleria</h2>
+            
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">Tutte</button>
+                <button class="filter-btn" data-filter="calcio">Calcio</button>
+                <button class="filter-btn" data-filter="pallavolo">Pallavolo</button>
+                <button class="filter-btn" data-filter="eventi">Eventi</button>
+                <button class="filter-btn" data-filter="allenamenti">Allenamenti</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="calcio">
+                    <img src="https://via.placeholder.com/400x300/007bff/ffffff?text=Calcio+1" alt="Partita di calcio">
+                    <div class="gallery-caption">Partita di calcio - Under 15</div>
+                </div>
+                
+                <div class="gallery-item" data-category="pallavolo">
+                    <img src="https://via.placeholder.com/400x300/28a745/ffffff?text=Pallavolo+1" alt="Partita di pallavolo">
+                    <div class="gallery-caption">Partita di pallavolo - Serie D</div>
+                </div>
+                
+                <div class="gallery-item" data-category="eventi">
+                    <img src="https://via.placeholder.com/400x300/dc3545/ffffff?text=Evento+1" alt="Evento sociale">
+                    <div class="gallery-caption">Festa di fine stagione 2024</div>
+                </div>
+                
+                <div class="gallery-item" data-category="calcio">
+                    <img src="https://via.placeholder.com/400x300/007bff/ffffff?text=Calcio+2" alt="Allenamento calcio">
+                    <div class="gallery-caption">Allenamento Primavera</div>
+                </div>
+                
+                <div class="gallery-item" data-category="allenamenti">
+                    <img src="https://via.placeholder.com/400x300/ffc107/000000?text=Allenamento+1" alt="Allenamento generale">
+                    <div class="gallery-caption">Preparazione atletica</div>
+                </div>
+                
+                <div class="gallery-item" data-category="pallavolo">
+                    <img src="https://via.placeholder.com/400x300/28a745/ffffff?text=Pallavolo+2" alt="Allenamento pallavolo">
+                    <div class="gallery-caption">Allenamento tecnico pallavolo</div>
+                </div>
+                
+                <div class="gallery-item" data-category="eventi">
+                    <img src="https://via.placeholder.com/400x300/dc3545/ffffff?text=Evento+2" alt="Premiazione">
+                    <div class="gallery-caption">Premiazione atleti meritevoli</div>
+                </div>
+                
+                <div class="gallery-item" data-category="calcio">
+                    <img src="https://via.placeholder.com/400x300/007bff/ffffff?text=Calcio+3" alt="Torneo giovanile">
+                    <div class="gallery-caption">Torneo giovanile Under 12</div>
+                </div>
+                
+                <div class="gallery-item" data-category="allenamenti">
+                    <img src="https://via.placeholder.com/400x300/ffc107/000000?text=Allenamento+2" alt="Preparazione fisica">
+                    <div class="gallery-caption">Preparazione fisica in palestra</div>
+                </div>
+                
+                <div class="gallery-item" data-category="pallavolo">
+                    <img src="https://via.placeholder.com/400x300/28a745/ffffff?text=Pallavolo+3" alt="Amichevole pallavolo">
+                    <div class="gallery-caption">Amichevole pre-campionato</div>
+                </div>
+                
+                <div class="gallery-item" data-category="eventi">
+                    <img src="https://via.placeholder.com/400x300/dc3545/ffffff?text=Evento+3" alt="Raduno">
+                    <div class="gallery-caption">Raduno estivo 2024</div>
+                </div>
+                
+                <div class="gallery-item" data-category="calcio">
+                    <img src="https://via.placeholder.com/400x300/007bff/ffffff?text=Calcio+4" alt="Finale torneo">
+                    <div class="gallery-caption">Finale torneo regionale</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Modal per visualizzazione ingrandita -->
+        <div class="modal" id="imageModal">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div class="modal-nav prev" id="prevImage">&#10094;</div>
+            <img class="modal-content" id="modalImage">
+            <div class="modal-nav next" id="nextImage">&#10095;</div>
+            <div class="modal-caption" id="modalCaption"></div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Polisportiva Albinese - Albino (BG)</p>
+    </footer>
+
+    <script>
+        // Menu mobile toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const mainMenu = document.getElementById('mainMenu');
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            // Toggle menu mobile
+            menuToggle.addEventListener('click', function() {
+                mainMenu.classList.toggle('active');
+                this.querySelector('i').classList.toggle('fa-bars');
+                this.querySelector('i').classList.toggle('fa-times');
+            });
+            
+            // Gestione dropdown su mobile
+            if (window.innerWidth <= 768) {
+                dropdowns.forEach(dropdown => {
+                    const link = dropdown.querySelector('a');
+                    
+                    link.addEventListener('click', function(e) {
+                        if (dropdown.querySelector('.dropdown-content')) {
+                            e.preventDefault();
+                            dropdown.classList.toggle('active');
+                        }
+                    });
+                });
+            }
+            
+            // Chiudi menu quando si clicca fuori
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.navbar')) {
+                    mainMenu.classList.remove('active');
+                    menuToggle.querySelector('i').classList.add('fa-bars');
+                    menuToggle.querySelector('i').classList.remove('fa-times');
+                }
+            });
+            
+            // Filtri galleria
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Rimuovi classe active da tutti i bottoni
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Aggiungi classe active al bottone cliccato
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Modal per visualizzazione immagini
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            const closeModal = document.getElementById('closeModal');
+            const prevImage = document.getElementById('prevImage');
+            const nextImage = document.getElementById('nextImage');
+            
+            let currentImageIndex = 0;
+            let visibleImages = [];
+            
+            // Aggiorna l'array delle immagini visibili
+            function updateVisibleImages() {
+                visibleImages = Array.from(galleryItems).filter(item => 
+                    item.style.display !== 'none' && window.getComputedStyle(item).display !== 'none'
+                );
+            }
+            
+            // Apri modal al click su un'immagine
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    // Aggiorna array di immagini visibili
+                    updateVisibleImages();
+                    
+                    // Trova l'indice dell'immagine cliccata tra quelle visibili
+                    currentImageIndex = visibleImages.indexOf(this);
+                    showImage(currentImageIndex);
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Chiudi modal
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Navigazione immagini
+            prevImage.addEventListener('click', function() {
+                currentImageIndex = (currentImageIndex - 1 + visibleImages.length) % visibleImages.length;
+                showImage(currentImageIndex);
+            });
+            
+            nextImage.addEventListener('click', function() {
+                currentImageIndex = (currentImageIndex + 1) % visibleImages.length;
+                showImage(currentImageIndex);
+            });
+            
+            // Chiudi modal cliccando fuori dall'immagine
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Navigazione con tastiera
+            document.addEventListener('keydown', function(e) {
+                if (modal.style.display === 'flex') {
+                    if (e.key === 'Escape') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    } else if (e.key === 'ArrowLeft') {
+                        currentImageIndex = (currentImageIndex - 1 + visibleImages.length) % visibleImages.length;
+                        showImage(currentImageIndex);
+                    } else if (e.key === 'ArrowRight') {
+                        currentImageIndex = (currentImageIndex + 1) % visibleImages.length;
+                        showImage(currentImageIndex);
+                    }
+                }
+            });
+            
+            function showImage(index) {
+                if (visibleImages.length === 0) return;
+                
+                const item = visibleImages[index];
+                const img = item.querySelector('img');
+                const caption = item.querySelector('.gallery-caption');
+                
+                modalImage.src = img.src;
+                modalImage.alt = img.alt;
+                modalCaption.textContent = caption.textContent;
+            }
+        });
+    </script>
+</body>
+</html>
