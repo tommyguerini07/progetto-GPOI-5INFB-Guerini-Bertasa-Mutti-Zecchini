@@ -2,7 +2,7 @@
 progetto GPOI sito polisportive Bergamo daje!
 
 Version:
-"V1.0.0" 3/11/2025
+"V0.0.3" 11/11/2025
 
 Roles:
 Andrea Zecchini( economist, document manager, bomber)
