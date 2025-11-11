@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendario e Risultati - Polisportiva Albinese</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="calendario.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="../image.png">
-
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="calendario.css">
+    
 </head>
 <body>
     <div id="notification" class="notification"></div>
@@ -15,28 +17,32 @@
     <header>
         <nav class="navbar">
             <div class="logo-title">
-                <img src="image.png" alt="Polisportiva Albinese Logo" class="logo">
+                <img src="../image.png" alt="Polisportiva Albinese Logo" class="logo">
                 <span class="site-title">Polisportiva Albinese</span>
             </div>
-            <ul class="menu">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="menu" id="mainMenu">
                 <li class="dropdown">
-                    <a href="#calcio">Calcio</a>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#calcio">Calcio <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="squadre.html">Squadre</a></li>
-                        <li><a href="calcio/calndario.html">Calendario</a></li>
-                        <li><a href="#">Risultati</a></li>
+                        <li><a href="calendario.html" class="active">Calendario</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#pallavolo">Pallavolo</a>
+                    <a href="#pallavolo">Pallavolo <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
-                        <li><a href="#">Squadre</a></li>
-                        <li><a href="#">Calendario</a></li>
-                        <li><a href="#">Risultati</a></li>
+                        <li><a href="../pallavolo/squadre.html">Squadre</a></li>
+                        <li><a href="../pallavolo/calendario.html">Calendario</a></li>
                     </ul>
                 </li>
-                <li><a href="#galleria">Galleria</a></li>
-                <li><a href="#contatti">Contatti</a></li>
+                <li><a href="../galleria.html">Galleria</a></li>
+                <li><a href="../contatti.html">Contatti</a></li>
             </ul>
         </nav>
     </header>
@@ -182,10 +188,36 @@
             },
             "primavera": {
                 "2025-26": [
+                    {
+                        id: 5,
+                        date: "2025-11-05",
+                        time: "18:30",
+                        homeTeam: "POLISPORTIVA ALBINESE",
+                        awayTeam: "JUNIOR TEAM",
+                        competition: "Campionato Giovanile",
+                        round: "Giornata 8",
+                        location: "Campo Comunale, Albino",
+                        status: "upcoming",
+                        type: "home",
+                        result: null
+                    }
                 ]
             },
             "giovanili": {
                 "2025-26": [
+                    {
+                        id: 6,
+                        date: "2025-11-08",
+                        time: "10:00",
+                        homeTeam: "POLISPORTIVA ALBINESE",
+                        awayTeam: "GIOVANI TALENTI",
+                        competition: "Torneo Under 15",
+                        round: "Quarti di Finale",
+                        location: "Campo Comunale, Albino",
+                        status: "upcoming",
+                        type: "home",
+                        result: null
+                    }
                 ]
             }
         };
@@ -198,12 +230,12 @@
             currentYear: new Date().getFullYear()
         };
 
-
         document.addEventListener('DOMContentLoaded', function() {
             initializeApp();
             setupEventListeners();
             renderMatches();
             generateMonthsList();
+            updateStats();
         });
 
         function initializeApp() {
@@ -211,6 +243,41 @@
         }
 
         function setupEventListeners() {
+            // Menu mobile toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const mainMenu = document.getElementById('mainMenu');
+            
+            menuToggle.addEventListener('click', function() {
+                mainMenu.classList.toggle('active');
+                this.querySelector('i').classList.toggle('fa-bars');
+                this.querySelector('i').classList.toggle('fa-times');
+            });
+            
+            // Gestione dropdown su mobile
+            const dropdowns = document.querySelectorAll('.dropdown');
+            if (window.innerWidth <= 768) {
+                dropdowns.forEach(dropdown => {
+                    const link = dropdown.querySelector('a');
+                    
+                    link.addEventListener('click', function(e) {
+                        if (dropdown.querySelector('.dropdown-content')) {
+                            e.preventDefault();
+                            dropdown.classList.toggle('active');
+                        }
+                    });
+                });
+            }
+            
+            // Chiudi menu quando si clicca fuori
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.navbar')) {
+                    mainMenu.classList.remove('active');
+                    menuToggle.querySelector('i').classList.add('fa-bars');
+                    menuToggle.querySelector('i').classList.remove('fa-times');
+                }
+            });
+
+            // Navigazione tra squadre
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -222,6 +289,7 @@
                 });
             });
 
+            // Filtri
             document.getElementById('filter-type').addEventListener('change', function() {
                 currentState.filter = this.value;
                 renderMatches();
@@ -233,11 +301,15 @@
                 updateStats();
             });
 
+            // Navigazione mesi
             document.getElementById('prev-month').addEventListener('click', goToPreviousMonth);
             document.getElementById('next-month').addEventListener('click', goToNextMonth);
+            
+            // Azioni
             document.getElementById('export-calendar').addEventListener('click', exportCalendar);
             document.getElementById('add-reminder').addEventListener('click', addReminder);
 
+            // Ricerca
             document.getElementById('search-input').addEventListener('input', function() {
                 filterMatchesBySearch(this.value);
             });
@@ -264,7 +336,7 @@
             const upcomingMatches = matches.filter(match => match.status === 'upcoming');
             
             if (upcomingMatches.length === 0) {
-                container.innerHTML = '<h2 class="section-title"><i class="fas fa-home"></i> PROSSIME PARTITE IN CASA</h2><p>Nessuna partita in programma</p>';
+                container.innerHTML = '<h2 class="section-title"><i class="fas fa-home"></i> PROSSIME PARTITE IN CASA</h2><div class="no-matches">Nessuna partita in programma</div>';
                 return;
             }
             
@@ -288,7 +360,7 @@
                     </div>
                     <div class="match-content">
                         <div class="team">
-                            <div class="team-logo" style="background-image: url('image.png')"></div>
+                            <div class="team-logo" style="background-image: url('../image.png')"></div>
                             <div class="team-name">${match.homeTeam}</div>
                         </div>
                         <div class="match-time">${match.time}</div>
@@ -300,9 +372,6 @@
                     <div class="match-info">
                         <i class="fas fa-map-marker-alt"></i> ${match.location}
                     </div>
-                    <a href="#" class="buy-tickets">
-                        <i class="fas fa-ticket-alt"></i> ACQUISTA I BIGLIETTI
-                    </a>
                 </div>`;
             });
             
@@ -314,7 +383,7 @@
             const pastMatches = matches.filter(match => match.status === 'completed');
             
             if (pastMatches.length === 0) {
-                container.innerHTML = '<h2 class="section-title"><i class="far fa-calendar-check"></i> PARTITE PASSATE</h2><p>Nessuna partita disputata</p>';
+                container.innerHTML = '<h2 class="section-title"><i class="far fa-calendar-check"></i> PARTITE PASSATE</h2><div class="no-matches">Nessuna partita disputata</div>';
                 return;
             }
             
@@ -341,12 +410,12 @@
                     </div>
                     <div class="match-content">
                         <div class="team">
-                            <div class="team-logo" style="background-image: ${isHomeMatch ? "url('image.png')" : "none"}">${isHomeMatch ? '' : getTeamInitials(match.homeTeam)}</div>
+                            <div class="team-logo" style="background-image: ${isHomeMatch ? "url('../image.png')" : "none"}">${isHomeMatch ? '' : getTeamInitials(match.homeTeam)}</div>
                             <div class="team-name">${match.homeTeam}</div>
                         </div>
                         <div class="match-result">${match.result}</div>
                         <div class="team home">
-                            <div class="team-logo" style="background-image: ${!isHomeMatch ? "url('image.png')" : "none"}">${!isHomeMatch ? '' : getTeamInitials(match.awayTeam)}</div>
+                            <div class="team-logo" style="background-image: ${!isHomeMatch ? "url('../image.png')" : "none"}">${!isHomeMatch ? '' : getTeamInitials(match.awayTeam)}</div>
                             <div class="team-name">${match.awayTeam}</div>
                         </div>
                     </div>
@@ -433,7 +502,32 @@
         }
 
         function updateStats() {
+            const matches = matchesData[currentState.team][currentState.season] || [];
+            const completedMatches = matches.filter(match => match.status === 'completed');
             
+            let wins = 0, draws = 0, losses = 0;
+            
+            completedMatches.forEach(match => {
+                if (match.result) {
+                    const [homeScore, awayScore] = match.result.split('-').map(Number);
+                    const isHomeTeam = match.homeTeam.includes('ALBINESE');
+                    
+                    if (isHomeTeam) {
+                        if (homeScore > awayScore) wins++;
+                        else if (homeScore === awayScore) draws++;
+                        else losses++;
+                    } else {
+                        if (awayScore > homeScore) wins++;
+                        else if (awayScore === homeScore) draws++;
+                        else losses++;
+                    }
+                }
+            });
+            
+            document.getElementById('played-matches').textContent = completedMatches.length;
+            document.getElementById('wins').textContent = wins;
+            document.getElementById('draws').textContent = draws;
+            document.getElementById('losses').textContent = losses;
         }
 
         function exportCalendar() {
@@ -442,7 +536,6 @@
 
         function addReminder() {
             showNotification('Promemoria aggiunto per le prossime partite!');
-            
         }
 
         function showNotification(message) {
