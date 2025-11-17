@@ -19,7 +19,7 @@ v0.0.3 - 11/11/25
 **Scopo del documento**: [Il nostro sito  offre una panoramica completa e dettagliata della società sportiva, presentandola sotto ogni punto di vista. Per questo, abbiamo raccolto e organizzato una serie di contenuti informativi e visivi che raccontano la nostra realtà in modo chiaro e coinvolgente. Attraverso questo progetto,infatti, vogliamo rendere accessibile a tutti — atleti, famiglie, appassionati e nuovi interessati — la nostra passione per lo sport e per l'informatica.]
 
 **Contesto del progetto**: [La realizzazione del sito nasce dalla necessità di digitalizzare e valorizzare l’identità della società sportiva, migliorando la comunicazione interna ed esterna, facilitando l’accesso alle informazioni e promuovendo le attività sportive e formative offerte. In un contesto sempre più orientato alla comunicazione online, il sito rappresenta un punto di riferimento aggiornato e facilmente accessibile da qualsiasi dispositivo.]
-**Stakeholder coinvolti**: [????] 
+**Stakeholder coinvolti**: nessuno
 
 <br><br>
 
@@ -82,7 +82,7 @@ v0.0.3 - 11/11/25
 # 3. Analisi di Mercato
 
 ## 3.1 Analisi della Domanda
-**Clienti di riferimento**: Associazioni sportive di qualsiasi sport e categoria.
+**Clienti di riferimento**: Associazioni sportive di qualsiasi sport e categoria della provincia di bergamo.
 **Dimensione del mercato**: Ampio, proposte accettate anche al di fuori della provincia di Bergamo di società medio-piccole.
 **Tendenze di mercato**: Mercato in continua crescita e occasioni di vendita a società medio-piccole
 
@@ -129,21 +129,20 @@ Tabella SWOT:
 <br>
 
 ## 4.2 Requisiti Tecnici
-**Infrastruttura**: [Descrizione dell'infrastruttura necessaria]
-**Software**: [Descrizione del software necessario]
-**Hardware**: [Descrizione dell'hardware necessario]
-**Sicurezza**: [Misure di sicurezza previste]
-**Scalabilità**: [Piani per la scalabilità futura]
-**Manutenzione**: [Piani di manutenzione e supporto]
+**Software**: qualsiasi per scrivere e salvare codice(github)
+**Hardware**: computer
+**Sicurezza**:Firewall 
+**Scalabilità**: medio-piccola
+**Manutenzione**: piano manutenzione sempre attivo
 
 <br>
 
 ## 4.3 Fattibilità Tecnica
-**Tecnologie disponibili**: [Elenco delle tecnologie attualmente disponibili]
-**Competenze del team**: [Descrizione delle competenze tecniche del team]
-**Fornitori e partner**: [Elenco dei potenziali fornitori e partner]
-**Rischi tecnici**: [Elenco puntato dei principali rischi tecnici]
-**Prototipi e test**: [Descrizione di eventuali prototipi o test preliminari]
+**Tecnologie disponibili**: software, hardware
+**Competenze del team**:economia, collaborazione, scrittura codice
+**Fornitori e partner**: da trovare
+**Rischi tecnici**: attacchi, poche vendite, difficoltà nella manutenzione
+**Prototipi e test**: in corso
 
 <br><br>
 
@@ -192,17 +191,20 @@ Tabella SWOT:
 # 6. Analisi Organizzativa
 
 ## 6.1 Struttura Interna
-**Ruoli e Responsabilità**: [Elenco puntato dei principali ruoli e responsabilità]
-**Nuove figure professionali**: [Descrizione delle nuove figure professionali necessarie]
-**Formazione**: [Piani di formazione per il personale]
+**Ruoli e Responsabilità**: -Andrea Zecchini economista, document manager
+                            -Matteo bertasa, developer front/backhand
+                            -Gabriele Mutti, developer front/backhand
+                            -Tommaso Guerini, project leader develop-helper front/backhand
+**Nuove figure professionali**: Canali Marco
+**Formazione**:isiss valle seriana indirizo tecnico
 
 <br>
 
 ## 6.2 Struttura di Project Management
-**Responsabile di Progetto**: [Nome e ruolo]
-**Team di Progetto**: [Elenco dei membri del team]
-**Metodologia di Gestione**: [Descrizione della metodologia di gestione del progetto (es. Agile, Waterfall)]
-**Strumenti di Gestione**: [Elenco degli strumenti di gestione del progetto (es. Jira, Trello)]
+**Responsabile di Progetto**: Tommaso Guerini
+**Team di Progetto**: Gabriele Mutti, Matteo Bertasa, Andrea Zecchini
+**Metodologia di Gestione**:collaborazione tra gruppi
+**Strumenti di Gestione**:?
 
 <br><br>
 
