@@ -21,6 +21,11 @@ Checklist per osservazione sul campo
    - Dispositivi usati da staff (PC, smartphone, tablet).
 
 
+3. dettagli e caratteristiche della polisportiva
+   - maglie,colori della squadra e logo
+   - immagini e statistiche dei giocatori
+
+
 
 Fonti e verifiche
 - Validare le osservazioni e la possiblità di attivare il sito con il responsabile della polisportiva e, se possibile, con almeno 2 diverse realtà bergamasche per confronto.

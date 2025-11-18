@@ -2,7 +2,7 @@ Studio di Fattibilità - [Sito polisportiva]
 =======================================
 [TOC]
 
-v0.0.3 - 11/11/25
+v0.1.1 - 18/11/25
 **Redatto da:** [Tommaso Guerini,Gabriele Mutti,Matteo Bertasa,Andrea Zecchini]
 
 # Sommario Esecutivo
