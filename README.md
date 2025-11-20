@@ -6,8 +6,8 @@ Version:
 
 Roles:
 Andrea Zecchini( economist, document manager, bomber)
-Matteo Bertasa( developer fronthand/backhand, middelfielder)
-Gabriele Mutti( developer fronthand/backhand, right wing)
+Matteo Bertasa( developer frontend/backend, middelfielder)
+Gabriele Mutti( developer frontend/backend, right wing)
 Tommaso Guerini( project leader, developer helper, central back)
 
 Description:
