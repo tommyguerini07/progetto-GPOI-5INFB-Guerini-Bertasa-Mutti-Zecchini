@@ -1,5 +1,8 @@
 # Osservazioni sul campo — Polisportive bergamasche
 
+
+18/11/25
+
 Contesto generale (sintesi)
 - Le polisportive in provincia di Bergamo sono generalmente associazioni locali che offrono più discipline (calcio, basket, ginnastica, volley, atletica, ecc.).
 - Dimensione: da realtà piccole (decine di soci, gestione volontaria) a medie (centinaia di soci, staff misto volontari/professionisti).
