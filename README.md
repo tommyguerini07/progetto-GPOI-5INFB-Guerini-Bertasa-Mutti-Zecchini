@@ -18,4 +18,4 @@ Photo:
 ****
 
 Code:
-"The project code is primarily written in HTML, CSS, and JavaScript, with the support of the Markdown language."
+"The project code is primarily written in HTML, CSS, and JavaScript, with the support of the Markdown language, integrated in php with the use of xampp."
