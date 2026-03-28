@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - Polisportiva Albinese</title>
+    <link rel="icon" type="image/png" href="image.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="features.css">
+    <link rel="stylesheet" href="contatti.css">
+    <style>
+        :root {
+            --primary: #1565c0;
+            --primary-dark: #0d47a1;
+            --primary-light: #e3f2fd;
+            --accent: #ffd600;
+            --text: #222;
+            --text-light: #555;
+            --white: #fff;
+            --shadow: 0 4px 12px rgba(21, 101, 192, 0.15);
+            --shadow-hover: 0 8px 24px rgba(21, 101, 192, 0.25);
+            --radius: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f8fafc 100%);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+        }
+        
+        /* Header e navigazione */
+        header {
+            background: var(--primary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 60px;
+            margin-right: 1rem;
+            border-radius: 50%;
+            box-shadow: var(--shadow);
+            background: var(--white);
+        }
+        
+        .site-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 1px;
+        }
+        
+        .menu {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .menu > li {
+            position: relative;
+        }
+        
+        .menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+        
+        .menu a:hover {
+            background: var(--primary-dark);
+            color: var(--accent);
+            box-shadow: var(--shadow);
+        }
+        
+        .dropdown-content {
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            background: var(--white);
+            min-width: 200px;
+            box-shadow: var(--shadow-hover);
+            z-index: 10;
+            border-radius: var(--radius);
+            top: 100%;
+            left: 0;
+            padding: 0.5rem 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-content li {
+            padding: 0;
+        }
+        
+        .dropdown-content a {
+            color: var(--primary);
+            padding: 0.7rem 1.2rem;
+            display: block;
+            border-radius: 0;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+        
+        .dropdown-content a:hover {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding-left: 1.5rem;
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem 3rem;
+            background: linear-gradient(90deg, var(--primary-light) 60%, #bbdefb 100%);
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .hero-logo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            box-shadow: var(--shadow-hover);
+            margin-bottom: 1.5rem;
+            background: var(--white);
+        }
+        
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Sezione contatti */
+        .contacts-section {
+            max-width: 1000px;
+            margin: 2.5rem auto;
+            padding: 0 20px;
+        }
+        
+        .contacts-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .contacts-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .contacts-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-info {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+        }
+        
+        .contact-form {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+        }
+        
+        .contact-info h3, .contact-form h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+        }
+        
+        /* Cards contatti */
+        .contacts-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(21, 101, 192, 0.13);
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            transition: all 0.3s ease;
+            border: 1.5px solid var(--primary-light);
+            text-align: left;
+            cursor: pointer;
+            position: relative;
+            gap: 1em;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .contact-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+            border: 1.5px solid var(--accent);
+        }
+        
+        .contact-card .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 4px rgba(21, 101, 192, 0.1);
+            flex-shrink: 0;
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+        
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-value {
+            font-size: 1rem;
+            color: var(--text);
+            word-break: break-word;
+        }
+        
+        /* Form */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        /* Mappa */
+        .map-container {
+            margin-top: 3rem;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .map-placeholder {
+            background: var(--primary-light);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: auto;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            .navbar {
+                padding: 0.8rem 1.5rem;
+            }
+            
+            .site-title {
+                font-size: 1.5rem;
+            }
+            
+            .menu {
+                gap: 1rem;
+            }
+            
+            .menu a {
+                font-size: 1rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .menu {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--primary);
+                flex-direction: column;
+                align-items: center;
+                padding: 1.5rem 0;
+                gap: 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .menu > li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .menu a {
+                padding: 1rem;
+                justify-content: center;
+                border-radius: 0;
+            }
+            
+            .dropdown-content {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: var(--primary-dark);
+                width: 100%;
+                display: none;
+            }
+            
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+            
+            .dropdown-content a {
+                color: var(--white);
+                padding: 0.8rem 1rem;
+            }
+            
+            .dropdown-content a:hover {
+                background: rgba(255, 255, 255, 0.1);
+                padding-left: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .contacts-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 3rem 1rem 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-logo {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .site-title {
+                font-size: 1.3rem;
+            }
+            
+            .contact-info, .contact-form {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-title">
+                <img src="image.png" alt="Polisportiva Albinese Logo" class="logo">
+                <span class="site-title">Polisportiva Albinese</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="menu" id="mainMenu">
+                <li class="dropdown">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#calcio">Calcio <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="calcio/squadre.html">Squadre</a></li>
+                        <li><a href="calcio/calendario.html">Calendario</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#pallavolo">Pallavolo <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="pallavolo/squadre.html">Squadre</a></li>
+                        <li><a href="pallavolo/calendario.html">Calendario</a></li>
+                    </ul>
+                </li>
+                <li><a href="galleria.html">Galleria</a></li>
+                <li><a href="contatti.html" class="active">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <img src="image.png" alt="Logo Polisportiva Albinese" class="hero-logo">
+            <h1>Contatti</h1>
+            <p class="subtitle">Come raggiungerci e informazioni</p>
+        </section>
+        
+        <section class="contacts-section" id="contactsSection">
+            <h2>Informazioni di Contatto</h2>
+            
+            <div class="contacts-container">
+                <div class="contact-info">
+                    <h3>Dove Trovarci</h3>
+                    <div class="contacts-cards">
+                        <a href="https://instagram.com/polisportivaalbinese_official" target="_blank" class="contact-card">
+                            <span class="icon">
+                                <i class="fab fa-instagram"></i>
+                            </span>
+                            <div class="contact-details">
+                                <span class="contact-label">Instagram</span>
+                                <span class="contact-value">@polisportivaalbinese_official</span>
+                            </div>
+                        </a>
+                        
+                        <a href="https://facebook.com/PolisportivaAlbineseCalcio" target="_blank" class="contact-card">
+                            <span class="icon">
+                                <i class="fab fa-facebook"></i>
+                            </span>
+                            <div class="contact-details">
+                                <span class="contact-label">Facebook</span>
+                                <span class="contact-value">Polisportiva Albinese Calcio</span>
+                            </div>
+                        </a>
+                        
+                        <a href="mailto:polisportiva.albinese@gmail.com" class="contact-card">
+                            <span class="icon">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">polisportiva.albinese@gmail.com</span>
+                            </div>
+                        </a>
+                        
+                        <div class="contact-card">
+                            <span class="icon">
+                                <i class="fas fa-phone"></i>
+                            </span>
+                            <div class="contact-details">
+                                <span class="contact-label">Telefono</span>
+                                <span class="contact-value">- - - -</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <span class="icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </span>
+                            <div class="contact-details">
+                                <span class="contact-label">Indirizzo</span>
+                                <span class="contact-value">via Rio Re 2, Albino, Italy 24020</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Scrivici</h3>
+                    <form id="contactForm">
+                        <!-- Honeypot per spam bots -->
+                        <input type="text" name="website" id="website" style="display:none" tabindex="-1" autocomplete="off">
+                        <p class="form-note">Hai bisogno di informazioni su allenamenti, iscrizioni o eventi? Compila il form e ti risponderemo entro 48 ore.</p>
+                        <div class="form-group">
+                            <label for="name">Nome e Cognome</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Oggetto</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Messaggio</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Invia Messaggio</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <!-- Mappa responsive: link a Google Maps (sostituire con iframe se si desidera embed) -->
+                <a href="https://www.google.com/maps/search/?api=1&query=Via+Rio+Re+2+Albino" target="_blank" rel="noopener noreferrer" aria-label="Apri posizione su Google Maps">
+                    <div class="map-placeholder" role="img" aria-label="Mappa: Via Rio Re 2, Albino">
+                        <i class="fas fa-map-marked-alt" style="font-size: 2rem; margin-right: 10px;"></i>
+                        Mappa - Via Rio Re 2, Albino (BG) — Apri su Google Maps
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Polisportiva Albinese - Albino (BG)</p>
+    </footer>
+
+    <!-- Toast per feedback (usiamo gli stili in features.css) -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script>
+        // Menu mobile toggle + contact form handling migliorato
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const mainMenu = document.getElementById('mainMenu');
+            const dropdowns = document.querySelectorAll('.dropdown');
+            const contactForm = document.getElementById('contactForm');
+            const toast = document.getElementById('toast');
+            const contactsSection = document.getElementById('contactsSection');
+    
+            // Mostra animazione di entrata
+            requestAnimationFrame(() => contactsSection.classList.add('visible'));
+
+            // Toggle menu mobile
+            menuToggle.addEventListener('click', function() {
+                mainMenu.classList.toggle('active');
+                this.querySelector('i').classList.toggle('fa-bars');
+                this.querySelector('i').classList.toggle('fa-times');
+            });
+            
+            // Gestione dropdown su mobile
+            if (window.innerWidth <= 768) {
+                dropdowns.forEach(dropdown => {
+                    const link = dropdown.querySelector('a');
+                    
+                    link.addEventListener('click', function(e) {
+                        if (dropdown.querySelector('.dropdown-content')) {
+                            e.preventDefault();
+                            dropdown.classList.toggle('active');
+                        }
+                    });
+                });
+            }
+            
+            // Chiudi menu quando si clicca fuori
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.navbar')) {
+                    mainMenu.classList.remove('active');
+                    menuToggle.querySelector('i').classList.add('fa-bars');
+                    menuToggle.querySelector('i').classList.remove('fa-times');
+                }
+            });
+
+            // Toast helper
+            function showToast(message, duration = 3500) {
+                if (!toast) return;
+                toast.textContent = message;
+                toast.classList.add('visible');
+                toast.setAttribute('aria-hidden', 'false');
+                setTimeout(() => {
+                    toast.classList.remove('visible');
+                    toast.setAttribute('aria-hidden', 'true');
+                }, duration);
+            }
+
+            // Gestione form di contatto con piccoli accorgimenti UX
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Honeypot check
+                const honeypot = document.getElementById('website');
+                if (honeypot && honeypot.value) {
+                    // Probabile bot - non processare
+                    return;
+                }
+
+                const name = document.getElementById('name');
+                const email = document.getElementById('email');
+                const subject = document.getElementById('subject');
+                const message = document.getElementById('message');
+                const submitBtn = contactForm.querySelector('.submit-btn');
+
+                // Basic client-side validation
+                if (!name.value.trim() || !email.value.trim() || !subject.value.trim() || !message.value.trim()) {
+                    showToast('Per favore compila tutti i campi richiesti.');
+                    return;
+                }
+
+                // Disabilita il bottone e mostra spinner
+                submitBtn.disabled = true;
+                const spinner = document.createElement('span');
+                spinner.className = 'spinner';
+                spinner.setAttribute('aria-hidden', 'true');
+                submitBtn.appendChild(spinner);
+
+                // Simula invio (qui va inserita la chiamata al backend)
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    if (spinner.parentNode) spinner.parentNode.removeChild(spinner);
+                    contactForm.reset();
+                    showToast('Grazie! Messaggio inviato. Ti risponderemo al più presto.');
+                }, 900);
+            });
+        });
+    </script>
+</body>
+</html>
