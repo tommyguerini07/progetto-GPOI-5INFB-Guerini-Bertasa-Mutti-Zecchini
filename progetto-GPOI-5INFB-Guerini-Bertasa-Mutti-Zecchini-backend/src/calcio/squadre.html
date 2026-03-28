@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squadre di Calcio - Polisportiva Albinese</title>
+    <link rel="icon" type="image/png" href="../image.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="squadre.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-title">
+                <img src="../image.png" alt="Polisportiva Albinese Logo" class="logo">
+                <span class="site-title">Polisportiva Albinese</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="menu" id="mainMenu">
+                <li class="dropdown">
+                    <a href="../index.html">Home</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#calcio" class="active">Calcio <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="squadre.html" class="active">Squadre</a></li>
+                        <li><a href="calendario.html">Calendario</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#pallavolo">Pallavolo <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="../pallavolo/squadre.html">Squadre</a></li>
+                        <li><a href="../pallavolo/calendario.html">Calendario</a></li>
+                        <li><a href="../pallavolo/risultati.html">Risultati</a></li>
+                    </ul>
+                </li>
+                <li><a href="../galleria.html">Galleria</a></li>
+                <li><a href="../contatti.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <img src="../image.png" alt="Logo Polisportiva Albinese" class="hero-logo">
+            <h1>Squadre di Calcio</h1>
+            <p class="subtitle">Scopri tutte le nostre formazioni</p>
+        </section>
+        
+        <section class="teams-section">
+            <h2>Le Nostre Squadre</h2>
+            
+            <div class="teams-grid">
+                <div class="team-card">
+                    <div class="team-logo">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h3 class="team-name">Prima Squadra</h3>
+                    <p class="team-category">Categoria: Promozione</p>
+                    
+                    <div class="team-details">
+                        <div class="team-detail">
+                            <span class="detail-label">Allenatore:</span>
+                            <span class="detail-value">Marco Rossi</span>
+                        </div>
+                        <div class="team-detail">
+                            <span class="detail-label">Campo:</span>
+                            <span class="detail-value">Comunale di Albino</span>
+                        </div>
+                        <div class="team-detail">
+                            <span class="detail-label">Orari:</span>
+                            <span class="detail-value">Mar e Gio 20:30-22:00</span>
+                        </div>
+                    </div>
+                    
+                    <a href="prima-squadra.html" class="team-btn">Dettagli Squadra</a>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-logo">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h3 class="team-name">Under 17</h3>
+                    <p class="team-category">Categoria: Giovanissimi</p>
+                    
+                    <div class="team-details">
+                        <div class="team-detail">
+                            <span class="detail-label">Allenatore:</span>
+                            <span class="detail-value">Luca Bianchi</span>
+                        </div>
+                        <div class="team-detail">
+                            <span class="detail-label">Campo:</span>
+                            <span class="detail-value">Comunale di Albino</span>
+                        </div>
+                        <div class="team-detail">
+                            <span class="detail-label">Orari:</span>
+                            <span class="detail-value">Lun e Mer 17:00-18:30</span>
+                        </div>
+                    </div>
+                    
+                    <a href="under17.html" class="team-btn">Dettagli Squadra</a>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-logo">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h3 class="team-name">Under 15</h3>
+                    <p class="team-category">Categoria: Esordienti</p>
+                    
+                    <div class="team-details">
+                        <div class="team-detail">
+                            <span class="detail-label">Allenatore:</span>
+                            <span class="detail-value">Andrea Verdi</span>
+                        </div>
+                        <div class="team-detail">
+                            <span class="detail-label">Campo:</span>
+                            <span class="detail-value">Comunale di Albino</span>
+                        </div>
+                        <div class="team-detail">
+                            <span class="detail-label">Orari:</span>
+                            <span class="detail-value">Mar e Gio 16:00-17:30</span>
+                        </div>
+                    </div>
+                    
+                    <a href="under15.html" class="team-btn">Dettagli Squadra</a>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-logo">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h3 class="team-name">Under 13</h3>
+                    <p class="team-category">Categoria: Giovanissimi</p>
+                    
+                    <div class="team-details">
+                        <div class="team-detail">
+                            <span class="detail-label">Allenatore:</span>
+                            <span class="detail-value">Giuseppe Neri</span>
+                        </div>
+                        <div class="team-detail">
+                            <span class="detail-label">Campo:</span>
+                            <span class="detail-value">Comunale di Albino</span>
+                        </div>
+                        <div class="team-detail">
+                            <span class="detail-label">Orari:</span>
+                            <span class="detail-value">Lun e Ven 16:30-18:00</span>
+                        </div>
+                    </div>
+                    
+                    <a href="under13.html" class="team-btn">Dettagli Squadra</a>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-logo">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h3 class="team-name">Under 11</h3>
+                    <p class="team-category">Categoria: Pulcini</p>
+                    
+                    <div class="team-details">
+                        <div class="team-detail">
+                            <span class="detail-label">Allenatore:</span>
+                            <span class="detail-value">Paolo Gialli</span>
+                        </div>
+                        <div class="team-detail">
+                            <span class="detail-label">Campo:</span>
+                            <span class="detail-value">Comunale di Albino</span>
+                        </div>
+                        <div class="team-detail">
+                            <span class="detail-label">Orari:</span>
+                            <span class="detail-value">Mer e Ven 16:00-17:00</span>
+                        </div>
+                    </div>
+                    
+                    <a href="under11.html" class="team-btn">Dettagli Squadra</a>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-logo">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <h3 class="team-name">Under 9</h3>
+                    <p class="team-category">Categoria: Piccoli Amici</p>
+                    
+                    <div class="team-details">
+                        <div class="team-detail">
+                            <span class="detail-label">Allenatore:</span>
+                            <span class="detail-value">Simone Blu</span>
+                        </div>
+                        <div class="team-detail">
+                            <span class="detail-label">Campo:</span>
+                            <span class="detail-value">Comunale di Albino</span>
+                        </div>
+                        <div class="team-detail">
+                            <span class="detail-label">Orari:</span>
+                            <span class="detail-value">Sab 10:00-11:30</span>
+                        </div>
+                    </div>
+                    
+                    <a href="under9.html" class="team-btn">Dettagli Squadra</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Polisportiva Albinese - Albino (BG)</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const mainMenu = document.getElementById('mainMenu');
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            // Toggle menu mobile
+            menuToggle.addEventListener('click', function() {
+                mainMenu.classList.toggle('active');
+                this.querySelector('i').classList.toggle('fa-bars');
+                this.querySelector('i').classList.toggle('fa-times');
+            });
+            
+            // Gestione dropdown su mobile
+            if (window.innerWidth <= 768) {
+                dropdowns.forEach(dropdown => {
+                    const link = dropdown.querySelector('a');
+                    
+                    link.addEventListener('click', function(e) {
+                        if (dropdown.querySelector('.dropdown-content')) {
+                            e.preventDefault();
+                            dropdown.classList.toggle('active');
+                        }
+                    });
+                });
+            }
+            
+            // Chiudi menu quando si clicca fuori
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.navbar')) {
+                    mainMenu.classList.remove('active');
+                    menuToggle.querySelector('i').classList.add('fa-bars');
+                    menuToggle.querySelector('i').classList.remove('fa-times');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
