@@ -6,7 +6,7 @@ Version:
 
 Roles:
 Andrea Zecchini( economist, document manager, bomber)
-Matteo Bertasa( developer frontend/backend, middelfielder)
+Matteo Bertasa( developer frontend/backend, midfielder)
 Gabriele Mutti( developer frontend/backend, right wing)
 Tommaso Guerini( project leader, developer helper, central back)
 
@@ -18,4 +18,4 @@ Photo:
 ****
 
 Code:
-"The project code is primarily written in HTML, CSS, and JavaScript, with the support of the Markdown language, integrated in php with the use of xampp."
+"The project code is primarily written in HTML, CSS, and JavaScript with the support of the Markdown language, integrated in php with the use of xampp."
