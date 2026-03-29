@@ -11,3 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 	- docs/requirements
 	- task requirements
+
+## [1.2.0] - 30-03-2026
+
+### Added
+	-frontend updated
+	-backend updated
+	-integrated login, logout to the website with php
+	-new cookie policy
+	-integrated database
