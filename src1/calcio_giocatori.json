@@ -1,0 +1,121 @@
+{
+  "giocatori": [
+    {
+      "nome": "Luca Ferrari",
+      "numero": 1,
+      "ruolo": "Portiere",
+      "squadra": "prima_squadra",
+      "foto": "image.png",
+      "eta": 28,
+      "presenze": 120,
+      "gol": 0,
+      "descrizione": "Portiere affidabile, specialista nelle uscite alte.",
+      "statistiche": "Clean sheet 12 nella scorsa stagione"
+    },
+    {
+      "nome": "Marco Riva",
+      "numero": 5,
+      "ruolo": "Difensore Centrale",
+      "squadra": "prima_squadra",
+      "foto": "image.png",
+      "eta": 26,
+      "presenze": 98,
+      "gol": 4,
+      "descrizione": "Leader della difesa, forte nel gioco aereo."
+    },
+    {
+      "nome": "Alessio Conti",
+      "numero": 10,
+      "ruolo": "Centrocampista",
+      "squadra": "prima_squadra",
+      "foto": "image.png",
+      "eta": 24,
+      "presenze": 75,
+      "gol": 15,
+      "descrizione": "Regista offensivo, ottima visione di gioco."
+    },
+
+    {
+      "nome": "Simone Bianchi",
+      "numero": 1,
+      "ruolo": "Portiere",
+      "squadra": "under_17",
+      "foto": "image.png",
+      "eta": 16,
+      "presenze": 32,
+      "gol": 0,
+      "descrizione": "Giovane prospetto tra i pali."
+    },
+    {
+      "nome": "Davide Colombo",
+      "numero": 9,
+      "ruolo": "Attaccante",
+      "squadra": "under_17",
+      "foto": "image.png",
+      "eta": 17,
+      "presenze": 28,
+      "gol": 18,
+      "descrizione": "Bomber della categoria Under 17."
+    },
+
+    {
+      "nome": "Mattia Locatelli",
+      "numero": 6,
+      "ruolo": "Difensore",
+      "squadra": "under_15",
+      "foto": "image.png",
+      "eta": 15,
+      "presenze": 20,
+      "gol": 1,
+      "descrizione": "Difensore duttile, impiegabile su entrambe le fasce."
+    },
+    {
+      "nome": "Gabriele Rizzi",
+      "numero": 11,
+      "ruolo": "Esterno Offensivo",
+      "squadra": "under_15",
+      "foto": "image.png",
+      "eta": 14,
+      "presenze": 22,
+      "gol": 9,
+      "descrizione": "Velocissimo sull'out di sinistra."
+    },
+
+    {
+      "nome": "Nicolo Marchetti",
+      "numero": 8,
+      "ruolo": "Centrocampista",
+      "squadra": "under_13",
+      "foto": "image.png",
+      "eta": 12,
+      "presenze": 18,
+      "gol": 5,
+      "descrizione": "Centrocampista moderno, bravo in entrambe le fasi."
+    },
+
+    {
+      "nome": "Tommaso Fabbri",
+      "numero": 7,
+      "ruolo": "Attaccante",
+      "squadra": "under_11",
+      "foto": "image.png",
+      "eta": 10,
+      "presenze": 14,
+      "gol": 12,
+      "descrizione": "Sempre nel posto giusto al momento giusto."
+    },
+
+    {
+      "nome": "Riccardo Villa",
+      "numero": 3,
+      "ruolo": "Difensore",
+      "squadra": "under_9",
+      "foto": "image.png",
+      "eta": 8,
+      "presenze": 10,
+      "gol": 0,
+      "descrizione": "Grinta e sorriso, il capitano dei più piccoli."
+    }
+  ]
+}
+

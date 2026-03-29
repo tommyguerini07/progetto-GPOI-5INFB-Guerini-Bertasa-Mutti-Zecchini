@@ -446,17 +446,15 @@ session_start();
         });  
     </script>
 
-    <h1>Cookies Banner</h1>
-
-    <!-- Add this to your index.html -->
-    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+    <!-- Cookie banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;" aria-live="polite" role="dialog" aria-label="Cookie consent">
       <div class="cookie-content">
-        <p>We use cookies for essential functions and analytics. 
-          <a href="/privacy" target="_blank">Privacy Policy</a>
-        </p>
+        <h2>Usiamo i cookie</h2>
+        <p>Attivando i cookie possiamo migliorare la tua esperienza e offrirti statistiche anonime. Leggi la <a href="contatti.php#privacy" target="_blank">Privacy Policy</a>.</p>
         <div class="cookie-buttons">
-          <button id="accept-essential" class="btn-minimal">Essential Only</button>
-          <button id="accept-all" class="btn-primary">Accept All</button>
+          <button id="accept-essential" class="btn-minimal">Solo essenziali</button>
+          <button id="accept-all" class="btn-primary">Accetta tutti</button>
+          <button id="decline-all" class="btn-link">Rifiuta</button>
         </div>
       </div>
     </div>
@@ -472,32 +470,42 @@ session_start();
       const CookieManager = {
 
         init() {
-          // Check if consent already given
-          if (!this.getConsent()) {
+          const consent = this.getConsent()
+          if (!consent) {
             this.showBanner()
+          } else {
+            this.applyConsent(consent)
           }
           this.setupListeners()
-          this.applyConsent(this.getConsent())
         },
         
         showBanner() {
           document.getElementById('cookie-banner').style.display = 'block'
+          document.body.classList.add('has-cookie-banner')
         },
         
         hideBanner() {
           document.getElementById('cookie-banner').style.display = 'none'
+          document.body.classList.remove('has-cookie-banner')
         },
         
         setupListeners() {
           document.getElementById('accept-essential').addEventListener('click', () => {
             this.saveConsent({ essential: true, analytics: false, marketing: false })
             this.hideBanner()
+            this.applyConsent({ essential: true, analytics: false, marketing: false })
           });
           
           document.getElementById('accept-all').addEventListener('click', () => {
-            this.saveConsent({ essential: true, analytics: true, marketing: false })
+            this.saveConsent({ essential: true, analytics: true, marketing: true })
             this.hideBanner()
             this.enableAnalytics() // Enable Firebase Analytics if needed
+          });
+
+          document.getElementById('decline-all').addEventListener('click', () => {
+            this.saveConsent({ essential: true, analytics: false, marketing: false })
+            this.hideBanner()
+            this.blockAnalytics()
           });
         },
         
@@ -509,37 +517,38 @@ session_start();
         },
         
         getConsent() {
-          const saved = localStorage.getItem('cookieConsent')
-          return saved ? JSON.parse(saved) : null
+          try {
+            const saved = localStorage.getItem('cookieConsent')
+            return saved ? JSON.parse(saved) : null
+          } catch {
+            return null
+          }
         },
         
         applyConsent(consent) {
           if (!consent) return
           
-          // Block analytics if not consented
           if (!consent.analytics) {
             this.blockAnalytics()
+          } else {
+            this.enableAnalytics()
           }
         },
         
         blockAnalytics() {
-          // Disable Firebase Analytics
           if (typeof window !== 'undefined') {
-            window['ga-disable-UA-XXXXX-Y'] = true // Your GA ID
+            window['ga-disable-UA-XXXXX-Y'] = true // Sostituisci con il tuo ID GA se usi Google Analytics
           }
         },
         
         enableAnalytics() {
-          // Initialize Firebase Analytics only if consented
           if (typeof firebase !== 'undefined' && firebase.analytics) {
             firebase.analytics()
           }
         }
       };
 
-      window.addEventListener('DOMContentLoaded', (e) => {
-        console.log('@DOM >> Ready')
-
+      window.addEventListener('DOMContentLoaded', () => {
         CookieManager.init()
       })
 
