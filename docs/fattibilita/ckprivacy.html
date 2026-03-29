@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Privacy & Cookies - Your App</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1, h2 { color: #333; }
+        .cookie-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .cookie-table th, .cookie-table td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        .cookie-table th { background-color: #f5f5f5; }
+    </style>
+</head>
+<body>
+    <h1>Privacy & Cookie Policy</h1>
+    
+    <h2>1. Cookies We Use</h2>
+    <table class="cookie-table">
+        <tr>
+            <th>Cookie</th>
+            <th>Purpose</th>
+            <th>Duration</th>
+            <th>Essential?</th>
+        </tr>
+        <tr>
+            <td>Firebase Session</td>
+            <td>User authentication and security</td>
+            <td>Session</td>
+            <td>Yes (site won't work without)</td>
+        </tr>
+        <tr>
+            <td>Google Analytics</td>
+            <td>Understanding how users interact with our app</td>
+            <td>2 years</td>
+            <td>No (requires your consent)</td>
+        </tr>
+    </table>
+    
+    <h2>2. Your Choices</h2>
+    <p>You can manage cookies in your browser settings:</p>
+    <ul>
+        <li><strong>Chrome:</strong> Settings → Privacy and security → Cookies</li>
+        <li><strong>Firefox:</strong> Options → Privacy & Security → Cookies</li>
+        <li><strong>Safari:</strong> Preferences → Privacy → Cookies</li>
+    </ul>
+    
+    <p>To change your consent for this site: 
+       <button onclick="resetConsent()">Reset Cookie Preferences</button>
+    </p>
+    
+    <h2>3. Firebase Services We Use</h2>
+    <ul>
+        <li><strong>Firebase Authentication:</strong> To securely log you in</li>
+        <li><strong>Firestore Database:</strong> To store your app data</li>
+        <li><strong>Firebase Analytics (optional):</strong> To improve the app</li>
+    </ul>
+
+    <h2>3.1 Firebase Authentication Note</h2>
+    <p>Firebase Auth primarly uses:</p>
+    <ul>
+        <li><strong>localStorage/sessionStorage</strong> for tokens (not cookies)</li>
+        <li><strong>IndexdDB</strong> for offline persistence</li>
+        <li><strong>__session cookie</strong> only for Firebase Hosting + Cloud Functions</li>
+    </ul>
+    
+    <h2>4. Contact</h2>
+    <p>Questions? Email: privacy@yourapp.com</p>
+    
+    <script>
+    function resetConsent() {
+        localStorage.removeItem('cookieConsent');
+        alert('Cookie preferences reset. Page will reload.');
+        window.location.reload();
+    }
+    </script>
+</body>
+</html>
