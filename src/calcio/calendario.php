@@ -9,7 +9,21 @@
     <link rel="icon" type="image/png" href="../image.png">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="calendario.css">
-    
+    <style>
+        .navbar .menu,
+        .navbar .menu li,
+        .navbar .dropdown-content,
+        .navbar .dropdown-content li {
+            list-style: none !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar .menu li::marker,
+        .navbar .dropdown-content li::marker {
+            content: "" !important;
+        }
+    </style>
 </head>
 <body>
     <div id="notification" class="notification"></div>
@@ -25,24 +39,24 @@
             </button>
             <ul class="menu" id="mainMenu">
                 <li class="dropdown">
-                    <a href="../index.html">Home</a>
+                    <a href="../index.php">Home</a>
                 </li>
                 <li class="dropdown">
                     <a href="#calcio">Calcio <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
-                        <li><a href="squadre.html">Squadre</a></li>
-                        <li><a href="calendario.html" class="active">Calendario</a></li>
+                        <li><a href="squadre.php">Squadre</a></li>
+                        <li><a href="calendario.php" class="active">Calendario</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#pallavolo">Pallavolo <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
-                        <li><a href="../pallavolo/squadre.html">Squadre</a></li>
-                        <li><a href="../pallavolo/calendario.html">Calendario</a></li>
+                        <li><a href="../pallavolo/squadre.php">Squadre</a></li>
+                        <li><a href="../pallavolo/calendario.php">Calendario</a></li>
                     </ul>
                 </li>
-                <li><a href="../galleria.html">Galleria</a></li>
-                <li><a href="../contatti.html">Contatti</a></li>
+                <li><a href="../galleria.php">Galleria</a></li>
+                <li><a href="../contatti.php">Contatti</a></li>
             </ul>
         </nav>
     </header>

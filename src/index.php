@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -37,6 +42,11 @@
                 </li>
                 <li><a href="galleria.php">Galleria</a></li>
                 <li><a href="contatti.php">Contatti</a></li>
+                <?php if (!isset($_SESSION["user"])) { ?>
+                <li><a href="login.php"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                <?php } else { ?>
+                <li><a href="logout.php" id="logoutBtn"><i class="fas fa-user"></i> Logout</a></li>
+                <?php } ?>
             </ul>
         </nav>
     </header>
@@ -49,7 +59,6 @@
             <a href="contatti.php" class="cta-button">Unisciti a Noi</a>
         </section>
         
-        <!-- Sezione notizie in evidenza -->
         <section class="featured-news">
             <h2>Ultimi Risultati</h2>
             <div class="news-grid">
@@ -80,7 +89,7 @@
                         <div class="match-result">
                             <div class="team">
                                 <div class="team-logo">A</div>
-                                <div class="team-name">Albinese</div>
+                                <div class="team-name">Albinese</<div>
                             </div>
                             <div class="score">2 - 2</div>
                             <div class="team">
@@ -276,7 +285,15 @@
     </a>
 
     <script>
-        // Menu mobile toggle
+
+        const logoutBtn = document.getElementById("logoutBtn");
+
+        if(logoutBtn){
+        logoutBtn.addEventListener("click", function() {
+            window.location.href = "login.php";
+        });
+}
+        
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.getElementById('menuToggle');
             const mainMenu = document.getElementById('mainMenu');
@@ -285,14 +302,14 @@
             const themeSwitch = document.getElementById('themeSwitch');
             const newsletterForm = document.getElementById('newsletterForm');
             
-            // Toggle menu mobile
+           
             menuToggle.addEventListener('click', function() {
                 mainMenu.classList.toggle('active');
                 this.querySelector('i').classList.toggle('fa-bars');
                 this.querySelector('i').classList.toggle('fa-times');
             });
             
-            // Gestione dropdown su mobile
+           
             if (window.innerWidth <= 768) {
                 dropdowns.forEach(dropdown => {
                     const link = dropdown.querySelector('a');
@@ -304,7 +321,7 @@
                 });
             }
             
-            // Chiudi menu quando si clicca fuori
+            
             document.addEventListener('click', function(e) {
                 if (!e.target.closest('.navbar')) {
                     mainMenu.classList.remove('active');
@@ -313,7 +330,7 @@
                 }
             });
             
-            // Back to top button
+            
             window.addEventListener('scroll', function() {
                 if (window.pageYOffset > 300) {
                     backToTop.classList.add('visible');
@@ -322,7 +339,7 @@
                 }
             });
             
-            // Smooth scroll per anchor links
+            
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     if (this.getAttribute('href') !== '#') {
@@ -338,7 +355,7 @@
                 });
             });
             
-            // Animazione numeri statistiche
+            
             const statNumbers = document.querySelectorAll('.stat-number');
             const observerOptions = {
                 threshold: 0.5,
@@ -372,7 +389,7 @@
                 observer.observe(number);
             });
             
-            // Theme switcher
+           
             themeSwitch.addEventListener('click', function() {
                 document.body.classList.toggle('dark-theme');
                 const icon = this.querySelector('i');
@@ -387,14 +404,14 @@
                 }
             });
             
-            // Carica tema salvato
+            
             if (localStorage.getItem('theme') === 'dark') {
                 document.body.classList.add('dark-theme');
                 themeSwitch.querySelector('i').classList.remove('fa-moon');
                 themeSwitch.querySelector('i').classList.add('fa-sun');
             }
             
-            // Newsletter form
+            
             newsletterForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 const email = this.querySelector('input[type="email"]').value;
@@ -405,7 +422,7 @@
                 }, 1000);
             });
             
-            // Carosello eventi automatico
+            
             const eventsSlider = document.querySelector('.events-slider');
             if (eventsSlider) {
                 let scrollAmount = 0;
@@ -426,7 +443,107 @@
                 
                 setInterval(autoScrollEvents, 4000);
             }
-        });
+        });  
     </script>
+
+    <h1>Cookies Banner</h1>
+
+    <!-- Add this to your index.html -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+      <div class="cookie-content">
+        <p>We use cookies for essential functions and analytics. 
+          <a href="/privacy" target="_blank">Privacy Policy</a>
+        </p>
+        <div class="cookie-buttons">
+          <button id="accept-essential" class="btn-minimal">Essential Only</button>
+          <button id="accept-all" class="btn-primary">Accept All</button>
+        </div>
+      </div>
+    </div>
+
+    <noscript>
+      Please enable JavaScript to view this website.
+    </noscript>
+
+    <!-- Import Js Module -->
+    <script type="module">
+
+      // Cookie manager
+      const CookieManager = {
+
+        init() {
+          // Check if consent already given
+          if (!this.getConsent()) {
+            this.showBanner()
+          }
+          this.setupListeners()
+          this.applyConsent(this.getConsent())
+        },
+        
+        showBanner() {
+          document.getElementById('cookie-banner').style.display = 'block'
+        },
+        
+        hideBanner() {
+          document.getElementById('cookie-banner').style.display = 'none'
+        },
+        
+        setupListeners() {
+          document.getElementById('accept-essential').addEventListener('click', () => {
+            this.saveConsent({ essential: true, analytics: false, marketing: false })
+            this.hideBanner()
+          });
+          
+          document.getElementById('accept-all').addEventListener('click', () => {
+            this.saveConsent({ essential: true, analytics: true, marketing: false })
+            this.hideBanner()
+            this.enableAnalytics() // Enable Firebase Analytics if needed
+          });
+        },
+        
+        saveConsent(consent) {
+          localStorage.setItem('cookieConsent', JSON.stringify({
+            ...consent,
+            timestamp: new Date().toISOString()
+          }))
+        },
+        
+        getConsent() {
+          const saved = localStorage.getItem('cookieConsent')
+          return saved ? JSON.parse(saved) : null
+        },
+        
+        applyConsent(consent) {
+          if (!consent) return
+          
+          // Block analytics if not consented
+          if (!consent.analytics) {
+            this.blockAnalytics()
+          }
+        },
+        
+        blockAnalytics() {
+          // Disable Firebase Analytics
+          if (typeof window !== 'undefined') {
+            window['ga-disable-UA-XXXXX-Y'] = true // Your GA ID
+          }
+        },
+        
+        enableAnalytics() {
+          // Initialize Firebase Analytics only if consented
+          if (typeof firebase !== 'undefined' && firebase.analytics) {
+            firebase.analytics()
+          }
+        }
+      };
+
+      window.addEventListener('DOMContentLoaded', (e) => {
+        console.log('@DOM >> Ready')
+
+        CookieManager.init()
+      })
+
+    </script>
+
 </body>
 </html>

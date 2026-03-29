@@ -27,6 +27,17 @@
             box-sizing: border-box;
         }
         
+        ul,
+        ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        li::marker {
+            content: "";
+        }
+        
         body {
             font-family: 'Roboto', sans-serif;
             background: linear-gradient(135deg, #e3f2fd 0%, #f8fafc 100%);
@@ -37,7 +48,6 @@
             line-height: 1.6;
         }
         
-        /* Header e navigazione */
         header {
             background: var(--primary);
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -156,8 +166,7 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-        
-        /* Hero section */
+
         .hero {
             text-align: center;
             padding: 4rem 1rem 3rem;
@@ -190,7 +199,6 @@
             margin-right: auto;
         }
         
-        /* Stili specifici per la galleria */
         .gallery-section {
             padding: 40px 20px;
             max-width: 1200px;
@@ -284,7 +292,6 @@
             transform: translateY(0);
         }
         
-        /* Modal per visualizzazione ingrandita */
         .modal {
             display: none;
             position: fixed;
@@ -362,7 +369,6 @@
             right: 30px;
         }
         
-        /* Footer */
         footer {
             background: var(--primary);
             color: var(--white);
@@ -373,7 +379,7 @@
             letter-spacing: 1px;
         }
         
-        /* Responsive */
+
         @media (max-width: 900px) {
             .navbar {
                 padding: 0.8rem 1.5rem;
@@ -529,24 +535,24 @@
             </button>
             <ul class="menu" id="mainMenu">
                 <li class="dropdown">
-                    <a href="index.html">Home</a>
+                    <a href="index.php">Home</a>
                 </li>
                 <li class="dropdown">
                     <a href="#calcio">Calcio <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
-                        <li><a href="calcio/squadre.html">Squadre</a></li>
-                        <li><a href="calcio/calendario.html">Calendario</a></li>
+                        <li><a href="calcio/squadre.php">Squadre</a></li>
+                        <li><a href="calcio/calendario.php">Calendario</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#pallavolo">Pallavolo <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
-                        <li><a href="pallavolo/squadre.html">Squadre</a></li>
-                        <li><a href="pallavolo/calendario.html">Calendario</a></li>
+                        <li><a href="pallavolo/squadre.php">Squadre</a></li>
+                        <li><a href="pallavolo/calendario.php">Calendario</a></li>
                     </ul>
                 </li>
-                <li><a href="galleria.html" class="active">Galleria</a></li>
-                <li><a href="contatti.html">Contatti</a></li>
+                <li><a href="galleria.php" class="active">Galleria</a></li>
+                <li><a href="contatti.php">Contatti</a></li>
             </ul>
         </nav>
     </header>
@@ -632,7 +638,6 @@
             </div>
         </section>
         
-        <!-- Modal per visualizzazione ingrandita -->
         <div class="modal" id="imageModal">
             <span class="close-modal" id="closeModal">&times;</span>
             <div class="modal-nav prev" id="prevImage">&#10094;</div>
@@ -647,20 +652,18 @@
     </footer>
 
     <script>
-        // Menu mobile toggle
+
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.getElementById('menuToggle');
             const mainMenu = document.getElementById('mainMenu');
             const dropdowns = document.querySelectorAll('.dropdown');
             
-            // Toggle menu mobile
             menuToggle.addEventListener('click', function() {
                 mainMenu.classList.toggle('active');
                 this.querySelector('i').classList.toggle('fa-bars');
                 this.querySelector('i').classList.toggle('fa-times');
             });
             
-            // Gestione dropdown su mobile
             if (window.innerWidth <= 768) {
                 dropdowns.forEach(dropdown => {
                     const link = dropdown.querySelector('a');
@@ -674,7 +677,6 @@
                 });
             }
             
-            // Chiudi menu quando si clicca fuori
             document.addEventListener('click', function(e) {
                 if (!e.target.closest('.navbar')) {
                     mainMenu.classList.remove('active');
@@ -683,15 +685,12 @@
                 }
             });
             
-            // Filtri galleria
             const filterButtons = document.querySelectorAll('.filter-btn');
             const galleryItems = document.querySelectorAll('.gallery-item');
             
             filterButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    // Rimuovi classe active da tutti i bottoni
                     filterButtons.forEach(btn => btn.classList.remove('active'));
-                    // Aggiungi classe active al bottone cliccato
                     this.classList.add('active');
                     
                     const filterValue = this.getAttribute('data-filter');
@@ -706,7 +705,6 @@
                 });
             });
             
-            // Modal per visualizzazione immagini
             const modal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
             const modalCaption = document.getElementById('modalCaption');
@@ -717,20 +715,16 @@
             let currentImageIndex = 0;
             let visibleImages = [];
             
-            // Aggiorna l'array delle immagini visibili
             function updateVisibleImages() {
                 visibleImages = Array.from(galleryItems).filter(item => 
                     item.style.display !== 'none' && window.getComputedStyle(item).display !== 'none'
                 );
             }
             
-            // Apri modal al click su un'immagine
             galleryItems.forEach((item, index) => {
                 item.addEventListener('click', function() {
-                    // Aggiorna array di immagini visibili
                     updateVisibleImages();
                     
-                    // Trova l'indice dell'immagine cliccata tra quelle visibili
                     currentImageIndex = visibleImages.indexOf(this);
                     showImage(currentImageIndex);
                     modal.style.display = 'flex';
@@ -738,13 +732,12 @@
                 });
             });
             
-            // Chiudi modal
+
             closeModal.addEventListener('click', function() {
                 modal.style.display = 'none';
                 document.body.style.overflow = 'auto';
             });
             
-            // Navigazione immagini
             prevImage.addEventListener('click', function() {
                 currentImageIndex = (currentImageIndex - 1 + visibleImages.length) % visibleImages.length;
                 showImage(currentImageIndex);
@@ -755,7 +748,6 @@
                 showImage(currentImageIndex);
             });
             
-            // Chiudi modal cliccando fuori dall'immagine
             modal.addEventListener('click', function(e) {
                 if (e.target === modal) {
                     modal.style.display = 'none';
@@ -763,7 +755,6 @@
                 }
             });
             
-            // Navigazione con tastiera
             document.addEventListener('keydown', function(e) {
                 if (modal.style.display === 'flex') {
                     if (e.key === 'Escape') {

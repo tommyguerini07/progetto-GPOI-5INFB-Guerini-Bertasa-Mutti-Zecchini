@@ -6,23 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-
-## [0.1.1] - 18-11-2025
-
-### Added
-	- docs/requirements
-	- task requirements
-
-### Changed
-	- Fix everything
-	- Issues closed
-
-## [0.0.3] - 11-11-2025
+## [1.0.0] - 03-11-2025
 
 ### Added
 	- docs/requirements
 	- task requirements
 
-### Changed
-	- Fix everything
-	- Issues closed
+## [1.2.0] - 30-03-2026
+
+### Added
+	-frontend updated
+	-backend updated
+	-integrated login, logout to the website with php
+	-new cookie policy
+	-integrated database

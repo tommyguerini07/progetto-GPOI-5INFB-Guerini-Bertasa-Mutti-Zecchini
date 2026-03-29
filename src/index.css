@@ -4,6 +4,17 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+         ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li::marker {
+    content: "";
+}
         
         :root {
             --primary: #1565c0;
@@ -27,22 +38,92 @@
             display: flex;
             flex-direction: column;
             line-height: 1.6;
-            overflow-x: hidden; /* Rimuove la barra di scorrimento orizzontale */
-            overflow-y: auto; /* Mantiene lo scroll verticale con rotella/freccette */
+            overflow-x: hidden; 
+            overflow-y: auto; 
         }
         
         /* Modalità notte */
         body.dark-theme {
-            --primary: #1e88e5;
-            --primary-dark: #1565c0;
-            --primary-light: #0d47a1;
-            --accent: #ffd600;
-            --text: #f5f5f5;
-            --text-light: #b0b0b0;
-            --white: #1e1e1e;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.4);
-            background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+            --primary: #0f4d9a;
+            --primary-dark: #0a3a72;
+            --primary-light: #4a76b5;
+            --accent: #ffbb33;
+            --text: #f5f6f7;
+            --text-light: #c1c8d1;
+            --white: #11161f;
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+            --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.6);
+            background: radial-gradient(circle at top right, #1b2a47 0%, #101826 35%, #0a0f17 100%);
+            color: var(--text);
+            filter: saturate(1.05);
+        }
+
+        body.dark-theme * {
+            transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+        }
+
+        body.dark-theme .navbar {
+            background: linear-gradient(90deg, rgba(10,26,44,0.95) 0%, rgba(18,40,64,0.95) 100%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        body.dark-theme .hero {
+            background: linear-gradient(120deg, rgba(4,45,79,0.9) 0%, rgba(8,24,40,0.8) 100%);
+            border-bottom: 2px solid rgba(255, 187, 51, 0.75);
+        }
+
+        body.dark-theme .hero h1 {
+            color: #ffffff !important;
+        }
+
+        body.dark-theme .subtitle {
+            color: #ffffff !important;
+        }
+
+        body.dark-theme .cta-button {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #081126;
+            box-shadow: 0 8px 22px rgba(255, 187, 51, 0.35);
+        }
+
+        body.dark-theme .section,
+        body.dark-theme .about,
+        body.dark-theme .featured-news,
+        body.dark-theme .sports,
+        body.dark-theme .events,
+        body.dark-theme .newsletter-form,
+        body.dark-theme .stats,
+        body.dark-theme footer {
+            background: rgba(22, 34, 52, 0.8);
+            border: 1px solid rgba(120, 150, 190, 0.15);
+            box-shadow: var(--shadow);
+        }
+
+        body.dark-theme .menu a,
+        body.dark-theme .dropdown-content a,
+        body.dark-theme .footer-links a,
+        body.dark-theme .social-links a,
+        body.dark-theme .news-link,
+        body.dark-theme .sport-link,
+        body.dark-theme .event-link {
+            color: #dfe7f2;
+        }
+
+        body.dark-theme .menu a:hover,
+        body.dark-theme .dropdown-content a:hover,
+        body.dark-theme .footer-links a:hover,
+        body.dark-theme .social-links a:hover,
+        body.dark-theme .news-link:hover,
+        body.dark-theme .sport-link:hover,
+        body.dark-theme .event-link:hover {
+            color: #ffeb99;
+        }
+
+        body.dark-theme .menu-toggle,
+        body.dark-theme .theme-switch,
+        body.dark-theme .back-to-top {
+            background: rgba(9, 33, 66, 0.88);
+            border: 1px solid rgba(225, 225, 225, 0.2);
         }
         
         /* Header e navigazione */
@@ -170,7 +251,6 @@
             cursor: pointer;
         }
         
-        /* Hero section */
         .hero {
             text-align: center;
             padding: 4rem 1rem 3rem;
@@ -251,7 +331,6 @@
             box-shadow: var(--shadow-hover);
         }
         
-        /* Sezioni principali */
         .about {
             max-width: 800px;
             margin: 2.5rem auto;
@@ -302,8 +381,7 @@
             max-width: 700px;
             margin: 0 auto;
         }
-        
-        /* Sezione notizie in evidenza */
+
         .featured-news {
             max-width: 1200px;
             margin: 3rem auto;
@@ -430,7 +508,6 @@
             transform: translateX(5px);
         }
         
-        /* Sezione sport */
         .sports {
             max-width: 1200px;
             margin: 3rem auto;
@@ -492,7 +569,6 @@
             transform: translateX(5px);
         }
         
-        /* Sezione eventi */
         .events {
             max-width: 1200px;
             margin: 3rem auto;
@@ -584,7 +660,6 @@
             color: var(--primary-dark);
         }
         
-        /* Sezione statistiche */
         .stats {
             background: var(--primary);
             color: var(--white);
@@ -618,7 +693,6 @@
             opacity: 0.9;
         }
         
-        /* Newsletter migliorata */
         .newsletter-form {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: var(--white);
@@ -695,7 +769,6 @@
             color: var(--accent);
         }
         
-        /* Footer */
         footer {
             background: var(--primary);
             color: var(--white);
@@ -756,7 +829,6 @@
             transform: translateY(-3px);
         }
         
-        /* Back to top button */
         .back-to-top {
             position: fixed;
             bottom: 20px;
@@ -787,7 +859,6 @@
             transform: translateY(-3px);
         }
         
-        /* Theme switcher */
         .theme-switch {
             position: fixed;
             bottom: 80px;
@@ -812,7 +883,6 @@
             transform: translateY(-3px);
         }
         
-        /* Responsive */
         @media (max-width: 900px) {
             .navbar {
                 padding: 0.8rem 1.5rem;

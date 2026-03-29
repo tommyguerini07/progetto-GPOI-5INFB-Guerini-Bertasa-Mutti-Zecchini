@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Inizializza tutti i roster presenti nella pagina
     const rosterContainers = document.querySelectorAll('[data-roster-json]');
     if (!rosterContainers.length) return;
 
@@ -37,7 +36,6 @@ function initRoster(options) {
         .then(data => {
             const allPlayers = Array.isArray(data) ? data : (data.giocatori || []);
 
-            // Se è specificata una squadra, filtra i giocatori per quella squadra
             if (teamKey) {
                 players = allPlayers.filter(p => (p.squadra || '').toLowerCase() === teamKey.toLowerCase());
             } else {
@@ -104,7 +102,6 @@ function initRoster(options) {
 
     function setupFilters() {
         if (filterSelect) {
-            // Popola i ruoli disponibili
             const roles = Array.from(new Set(players.map(p => p.ruolo).filter(Boolean))).sort();
             filterSelect.innerHTML = '<option value="">Tutti i ruoli</option>';
             roles.forEach(role => {
@@ -214,7 +211,6 @@ function openPlayerModal(player, sport) {
         stats.push(`<span><i class="fas fa-futbol"></i> ${player.gol} gol</span>`);
     }
     if (player.statistiche) {
-        // Campo libero per eventuali statistiche aggiuntive
         stats.push(`<span><i class="fas fa-chart-line"></i> ${player.statistiche}</span>`);
     }
     statsEl.innerHTML = stats.join('');
