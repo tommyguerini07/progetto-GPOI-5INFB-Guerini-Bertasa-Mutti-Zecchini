@@ -9,7 +9,7 @@ GPOI project – Polisportive Bergamo website
 ![status](https://img.shields.io/badge/status-beta-green?style=for-the-badge)
 ![license](https://img.shields.io/badge/license-GPL--3.0-blue?style=for-the-badge)
 
-![preview](https://github.com/tommyguerini07/progetto-GPOI-5INFB-Guerini-Bertasa-Mutti-Zecchini/src/index.html)
+![preview](http://localhost/src1/index.php)
 
 ## 📌 Description and Objectives
 
