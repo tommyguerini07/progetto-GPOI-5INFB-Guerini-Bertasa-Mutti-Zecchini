@@ -8,14 +8,11 @@ progetto GPOI sito polisportive Bergamo daje!
 ![status](https://img.shields.io/badge/status-beta-green?style=for-the-badge)
 ![license](https://img.shields.io/badge/license-GPL--3.0-blue?style=for-the-badge)
 
-![preview]()
+![preview](https://github.com/tommyguerini07/progetto-GPOI-5INFB-Guerini-Bertasa-Mutti-Zecchini/src/index.html)
 
-## 📌 Descrizione
-"Our project is committed to providing a multifunctional website for the sports clubs in the province of Bergamo. 
-Our goal is to give each organization the opportunity to be know not only in the real world but also online."
-
-## 🎯 Obiettivi del progetto
-l'obbiettivo principale del nostro sito è dare l'opportunità alle sportive della provincia bergamasca di espandersi dando anche a loro un sitoweb su cui pubblicare i propri risultati, le prossime partite e i giocatori di ogni sport per ogni squadra presente.
+## 📌 Descrizione e obbiettivi
+"Il nostro progetto si impegna a fornire un sito web multifunzionale per le società sportive della provincia di Bergamo.
+Il nostro obiettivo è dare a ogni organizzazione l'opportunità di farsi conoscere non solo nel mondo reale, ma anche online."
 
 ## 👥 Team di sviluppo
 Il progetto è stato realizzato dal gruppo composto da:
