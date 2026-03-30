@@ -31,53 +31,59 @@ The project was developed using HTML for the page structure, CSS for styling and
 
 ## 🌐 Project Structure
 
+```
 src1/
-├── css/                          # Fogli di stile
-│   ├── index.css
-│   ├── login.css
-│   ├── contatti.css
-│   ├── features.css
-│   ├── calcio-calendario.css
-│   ├── calcio-squadre.css
-│   ├── pallavolo-calendario.css
-│   └── pallavolo-squadre.css
+├── index.php                     # Redirect alla home page
 │
-├── data/                         # Dati JSON
-│   ├── calcio_giocatori.json
-│   └── pallavolo_giocatori.json
+├── pages/                        # 📄 Pagine principale
+│   ├── index.php                # Home page
+│   ├── login.php                # Pagina login
+│   ├── registrati.php           # Pagina registrazione
+│   ├── contatti.php             # Pagina contatti
+│   ├── galleria.php             # Galleria fotografica
+│   └── logout.php               # Logout
 │
-├── config/                       # Configurazione
-│   └── connessioneDB.php
+├── calcio/                       # ⚽ Sezione Calcio
+│   ├── calendario.php           # Calendario e risultati
+│   ├── squadre.php              # Squadre disponibili
+│   ├── roster.php               # Roster giocatori (dinamico)
+│   └── image.png                # Logo squadra
 │
-├── js/                           # JavaScript
-│   └── roster.js
+├── pallavolo/                    # 🏐 Sezione Pallavolo
+│   ├── calendario.php           # Calendario e risultati
+│   ├── squadre.php              # Squadre disponibili
+│   ├── roster.php               # Roster giocatori (dinamico)
+│   └── image.png                # Logo squadra
 │
-├── docs/                         # Documentazione
-│   ├── README.md
-│   ├── CHANGELOG.md
-│   ├── LICENSE
-│   └── ckprivacy.html
+├── css/                          # 🎨 Fogli di stile
+│   ├── styles.css               # Stili comuni
+│   ├── index.css                # Stili home
+│   ├── login.css                # Stili login/registrazione
+│   ├── contatti.css             # Stili contatti
+│   ├── features.css             # Stili galleria
+│   ├── calcio-calendario.css    # Stili calendario calcio
+│   ├── calcio-squadre.css       # Stili squadre calcio
+│   ├── pallavolo-calendario.css # Stili calendario pallavolo
+│   └── pallavolo-squadre.css    # Stili squadre pallavolo
 │
-├── calcio/                       # Sezione calcio
-│   ├── calendario.php
-│   ├── squadre.php
-│   ├── roster.php
-│   └── image.png
+├── data/                         # 📊 Dati JSON
+│   ├── calcio_giocatori.json    # Lista giocatori calcio
+│   └── pallavolo_giocatori.json # Lista giocatori pallavolo
 │
-├── pallavolo/                    # Sezione pallavolo
-│   ├── calendario.php
-│   ├── squadre.php
-│   ├── roster.php
-│   └── image.png
+├── js/                           # 💻 JavaScript
+│   └── roster.js                # Script dinamico roster
 │
-├── index.php                     # Pagine principali
-├── login.php
-├── contatti.php
-├── galleria.php
-├── logout.php
-├── registrati.php
-├── .gitignore
-└── [altri file di sistema]
+├── config/                       # ⚙️ Configurazione
+│   └── connessioneDB.php        # Connessione database
+│
+├── docs/                         # 📚 Documentazione
+│   ├── README.md                # Documentazione progetto
+│   ├── CHANGELOG.md             # Cronologia modifiche
+│   ├── LICENSE                  # Licenza GPL-3.0
+│   └── ckprivacy.html           # Cookie Policy & GDPR
+│
+└── .gitignore                    # File git ignorati
+```
 
 ## 🔐 Cookie Management and GDPR
 
