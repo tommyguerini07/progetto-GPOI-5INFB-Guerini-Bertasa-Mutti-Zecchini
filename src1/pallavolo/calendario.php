@@ -9,10 +9,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 
-<link rel="icon" type="image/png" href="../image.png">
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/tommyguerini07/tommyguerini07/main/assets/logo.png">
 
-<link rel="stylesheet" href="../styles.css">
-<link rel="stylesheet" href="calendario.css">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/pallavolo-calendario.css">
 
 </head>
 
@@ -24,7 +24,7 @@
 <nav class="navbar">
 
 <div class="logo-title">
-<img src="../image.png" class="logo">
+<img src="https://raw.githubusercontent.com/tommyguerini07/tommyguerini07/main/assets/logo.png" class="logo">
 <span class="site-title">Polisportiva Albinese</span>
 </div>
 
@@ -278,7 +278,7 @@ ${match.date} ${match.time}
 <div class="match-content">
 
 <div class="team">
-<div class="team-logo" style="background-image:url('../image.png')"></div>
+<div class="team-logo" style="background-image:url('https://raw.githubusercontent.com/tommyguerini07/tommyguerini07/main/assets/logo.png')"></div>
 <div class="team-name">${match.homeTeam}</div>
 </div>
 

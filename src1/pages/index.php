@@ -11,15 +11,15 @@ session_start();
     <title>Polisportiva Albinese</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/index.css">
 
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="logo-title">
-                <img src="image.png" alt="Polisportiva Albinese Logo" class="logo">
+                <img src="https://raw.githubusercontent.com/tommyguerini07/tommyguerini07/main/assets/logo.png" alt="Polisportiva Albinese Logo" class="logo">
                 <span class="site-title">Polisportiva Albinese</span>
             </div>
             <button class="menu-toggle" id="menuToggle">
@@ -29,15 +29,15 @@ session_start();
                 <li class="dropdown">
                     <a href="#calcio">Calcio <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
-                        <li><a href="calcio/squadre.php">Squadre</a></li>
-                        <li><a href="calcio/calendario.php">Calendario</a></li>
+                        <li><a href="../calcio/squadre.php">Squadre</a></li>
+                        <li><a href="../calcio/calendario.php">Calendario</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#pallavolo">Pallavolo <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
-                        <li><a href="pallavolo/squadre.php">Squadre</a></li>
-                        <li><a href="pallavolo/calendario.php">Calendario</a></li>
+                        <li><a href="../pallavolo/squadre.php">Squadre</a></li>
+                        <li><a href="../pallavolo/calendario.php">Calendario</a></li>
                     </ul>
                 </li>
                 <li><a href="galleria.php">Galleria</a></li>
@@ -53,7 +53,7 @@ session_start();
     
     <main>
         <section class="hero">
-            <img src="image.png" alt="Logo Polisportiva Albinese" class="hero-logo">
+            <img src="https://raw.githubusercontent.com/tommyguerini07/tommyguerini07/main/assets/logo.png" alt="Logo Polisportiva Albinese" class="hero-logo">
             <h1>Benvenuti alla Polisportiva Albinese</h1>
             <p class="subtitle">Mens Sana in Corpore Sano - Sport e Passione ad Albino (BG)</p>
             <a href="contatti.php" class="cta-button">Unisciti a Noi</a>
@@ -137,7 +137,7 @@ session_start();
                     <div class="sport-content">
                         <h3>Calcio</h3>
                         <p>Dai più piccoli ai professionisti, il calcio è nel nostro DNA. Scopri le nostre squadre e partecipa ai tornei.</p>
-                        <a href="calcio/squadre.php" class="sport-link">Scopri di più <i class="fas fa-arrow-right"></i></a>
+                        <a href="../calcio/squadre.php" class="sport-link">Scopri di più <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="sport-card">
@@ -145,7 +145,7 @@ session_start();
                     <div class="sport-content">
                         <h3>Pallavolo</h3>
                         <p>Passione, tecnica e lavoro di squadra. La pallavolo è uno dei nostri fiori all'occhiello.</p>
-                        <a href="pallavolo/squadre.php" class="sport-link">Scopri di più <i class="fas fa-arrow-right"></i></a>
+                        <a href="../pallavolo/squadre.php" class="sport-link">Scopri di più <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="sport-card">
@@ -450,7 +450,7 @@ session_start();
     <div id="cookie-banner" class="cookie-banner" style="display: none;" aria-live="polite" role="dialog" aria-label="Cookie consent">
       <div class="cookie-content">
         <h2>Usiamo i cookie</h2>
-        <p>Attivando i cookie possiamo migliorare la tua esperienza e offrirti statistiche anonime. Leggi la <a href="ckprivacy.html#privacy" target="_blank">Privacy Policy</a>.</p>
+        <p>Attivando i cookie possiamo migliorare la tua esperienza e offrirti statistiche anonime. Leggi la <a href="../docs/ckprivacy.html#privacy" target="_blank">Privacy Policy</a>.</p>
         <div class="cookie-buttons">
           <button id="accept-essential" class="btn-minimal">Solo essenziali</button>
           <button id="accept-all" class="btn-primary">Accetta tutti</button>

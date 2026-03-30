@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Squadre di Calcio - Polisportiva Albinese</title>
-    <link rel="icon" type="image/png" href="image.png">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/tommyguerini07/tommyguerini07/main/assets/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="squadre.css">
-    <script src="../roster.js" defer></script>
+    <link rel="stylesheet" href="../css/calcio-squadre.css">
+    <script src="../js/roster.js" defer></script>
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="logo-title">
-                <img src="image.png" alt="Polisportiva Albinese Logo" class="logo">
+                <img src="https://raw.githubusercontent.com/tommyguerini07/tommyguerini07/main/assets/logo.png" alt="Polisportiva Albinese Logo" class="logo">
                 <span class="site-title">Polisportiva Albinese</span>
             </div>
             <button class="menu-toggle" id="menuToggle">
@@ -46,7 +46,7 @@
     
     <main>
         <section class="hero">
-            <img src="image.png" alt="Logo Polisportiva Albinese" class="hero-logo">
+            <img src="https://raw.githubusercontent.com/tommyguerini07/tommyguerini07/main/assets/logo.png" alt="Logo Polisportiva Albinese" class="hero-logo">
             <h1>Squadre di Calcio</h1>
             <p class="subtitle">Scopri tutte le nostre formazioni</p>
         </section>

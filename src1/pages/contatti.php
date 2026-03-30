@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contatti - Polisportiva Albinese</title>
-    <link rel="icon" type="image/png" href="image.png">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/tommyguerini07/tommyguerini07/main/assets/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="features.css">
-    <link rel="stylesheet" href="contatti.css">
+    <link rel="stylesheet" href="../css/features.css">
+    <link rel="stylesheet" href="../css/contatti.css">
     <style>
         :root {
             --primary: #1565c0;
@@ -524,7 +524,7 @@
     <header>
         <nav class="navbar">
             <div class="logo-title">
-                <img src="image.png" alt="Polisportiva Albinese Logo" class="logo">
+                <img src="https://raw.githubusercontent.com/tommyguerini07/tommyguerini07/main/assets/logo.png" alt="Polisportiva Albinese Logo" class="logo">
                 <span class="site-title">Polisportiva Albinese</span>
             </div>
             <button class="menu-toggle" id="menuToggle">
@@ -537,15 +537,15 @@
                 <li class="dropdown">
                     <a href="#calcio">Calcio <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
-                        <li><a href="calcio/squadre.php">Squadre</a></li>
-                        <li><a href="calcio/calendario.php">Calendario</a></li>
+                        <li><a href="../calcio/squadre.php">Squadre</a></li>
+                        <li><a href="../calcio/calendario.php">Calendario</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#pallavolo">Pallavolo <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-content">
-                        <li><a href="pallavolo/squadre.php">Squadre</a></li>
-                        <li><a href="pallavolo/calendario.php">Calendario</a></li>
+                        <li><a href="../pallavolo/squadre.php">Squadre</a></li>
+                        <li><a href="../pallavolo/calendario.php">Calendario</a></li>
                     </ul>
                 </li>
                 <li><a href="galleria.php">Galleria</a></li>
@@ -556,7 +556,7 @@
     
     <main>
         <section class="hero">
-            <img src="image.png" alt="Logo Polisportiva Albinese" class="hero-logo">
+            <img src="https://raw.githubusercontent.com/tommyguerini07/tommyguerini07/main/assets/logo.png" alt="Logo Polisportiva Albinese" class="hero-logo">
             <h1>Contatti</h1>
             <p class="subtitle">Come raggiungerci e informazioni</p>
         </section>

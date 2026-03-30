@@ -5,7 +5,7 @@
       "numero": 1,
       "ruolo": "Libero",
       "squadra": "prima_squadra",
-      "foto": "image.png",
+      "foto": "https://raw.githubusercontent.com/tommyguerini07/tommyguerini07/main/assets/logo.png",
       "eta": 27,
       "presenze": 110,
       "descrizione": "Specialista in difesa, punto di riferimento in seconda linea.",
@@ -16,7 +16,7 @@
       "numero": 9,
       "ruolo": "Opposto",
       "squadra": "prima_squadra",
-      "foto": "image.png",
+      "foto": "https://raw.githubusercontent.com/tommyguerini07/tommyguerini07/main/assets/logo.png",
       "eta": 25,
       "presenze": 95,
       "descrizione": "Terminale offensivo principale della squadra."
@@ -26,7 +26,7 @@
       "numero": 5,
       "ruolo": "Centrale",
       "squadra": "prima_squadra",
-      "foto": "image.png",
+      "foto": "https://raw.githubusercontent.com/tommyguerini07/tommyguerini07/main/assets/logo.png",
       "eta": 24,
       "presenze": 80,
       "descrizione": "Muro solido e grande tempismo a rete."
@@ -37,7 +37,7 @@
       "numero": 7,
       "ruolo": "Schiacciatrice",
       "squadra": "under_18",
-      "foto": "image.png",
+      "foto": "https://raw.githubusercontent.com/tommyguerini07/tommyguerini07/main/assets/logo.png",
       "eta": 17,
       "presenze": 30,
       "descrizione": "Schiacciatrice completa, forte sia in attacco che in battuta."
@@ -47,7 +47,7 @@
       "numero": 2,
       "ruolo": "Palleggiatrice",
       "squadra": "under_18",
-      "foto": "image.png",
+      "foto": "https://raw.githubusercontent.com/tommyguerini07/tommyguerini07/main/assets/logo.png",
       "eta": 18,
       "presenze": 34,
       "descrizione": "Gestisce il gioco con calma e precisione."
@@ -58,7 +58,7 @@
       "numero": 10,
       "ruolo": "Schiacciatrice",
       "squadra": "under_16",
-      "foto": "image.png",
+      "foto": "https://raw.githubusercontent.com/tommyguerini07/tommyguerini07/main/assets/logo.png",
       "eta": 16,
       "presenze": 22,
       "descrizione": "Atleta esplosiva con ottimo salto."
@@ -69,7 +69,7 @@
       "numero": 4,
       "ruolo": "Centrale",
       "squadra": "under_14",
-      "foto": "image.png",
+      "foto": "https://raw.githubusercontent.com/tommyguerini07/tommyguerini07/main/assets/logo.png",
       "eta": 14,
       "presenze": 18,
       "descrizione": "Molto attenta sulle traiettorie avversarie."

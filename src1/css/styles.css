@@ -1,0 +1,27 @@
+/**
+ * Styles CSS - File di stile principale
+ * Include gli stili comuni per l'intero sito
+ */
+
+/* Reset base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Note: Stili specifici delle pagine sono nei rispettivi CSS:
+   - index.css per la home
+   - login.css per login/registrazione
+   - contatti.css per contatti
+   - features.css per galleria
+   - calcio-calendario.css e calcio-squadre.css per calcio
+   - pallavolo-calendario.css e pallavolo-squadre.css per pallavolo
+*/

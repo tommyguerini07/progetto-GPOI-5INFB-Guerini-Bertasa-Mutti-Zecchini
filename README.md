@@ -31,7 +31,53 @@ The project was developed using HTML for the page structure, CSS for styling and
 
 ## 🌐 Project Structure
 
-The repository is organized in a simple and modular way. The main file is `index.php`, that is contained in `/src1` folder, and documentation related to the cookie policy in the `/docs` folder, specifically in the `/ckprivacy.html` file.
+src1/
+├── css/                          # Fogli di stile
+│   ├── index.css
+│   ├── login.css
+│   ├── contatti.css
+│   ├── features.css
+│   ├── calcio-calendario.css
+│   ├── calcio-squadre.css
+│   ├── pallavolo-calendario.css
+│   └── pallavolo-squadre.css
+│
+├── data/                         # Dati JSON
+│   ├── calcio_giocatori.json
+│   └── pallavolo_giocatori.json
+│
+├── config/                       # Configurazione
+│   └── connessioneDB.php
+│
+├── js/                           # JavaScript
+│   └── roster.js
+│
+├── docs/                         # Documentazione
+│   ├── README.md
+│   ├── CHANGELOG.md
+│   ├── LICENSE
+│   └── ckprivacy.html
+│
+├── calcio/                       # Sezione calcio
+│   ├── calendario.php
+│   ├── squadre.php
+│   ├── roster.php
+│   └── image.png
+│
+├── pallavolo/                    # Sezione pallavolo
+│   ├── calendario.php
+│   ├── squadre.php
+│   ├── roster.php
+│   └── image.png
+│
+├── index.php                     # Pagine principali
+├── login.php
+├── contatti.php
+├── galleria.php
+├── logout.php
+├── registrati.php
+├── .gitignore
+└── [altri file di sistema]
 
 ## 🔐 Cookie Management and GDPR
 
