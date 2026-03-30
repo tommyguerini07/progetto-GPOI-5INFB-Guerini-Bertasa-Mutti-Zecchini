@@ -450,7 +450,7 @@ session_start();
     <div id="cookie-banner" class="cookie-banner" style="display: none;" aria-live="polite" role="dialog" aria-label="Cookie consent">
       <div class="cookie-content">
         <h2>Usiamo i cookie</h2>
-        <p>Attivando i cookie possiamo migliorare la tua esperienza e offrirti statistiche anonime. Leggi la <a href="contatti.php#privacy" target="_blank">Privacy Policy</a>.</p>
+        <p>Attivando i cookie possiamo migliorare la tua esperienza e offrirti statistiche anonime. Leggi la <a href="ckprivacy.html#privacy" target="_blank">Privacy Policy</a>.</p>
         <div class="cookie-buttons">
           <button id="accept-essential" class="btn-minimal">Solo essenziali</button>
           <button id="accept-all" class="btn-primary">Accetta tutti</button>
