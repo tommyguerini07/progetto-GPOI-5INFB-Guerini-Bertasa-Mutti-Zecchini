@@ -9,7 +9,7 @@ GPOI project – Polisportive Bergamo website
 ![status](https://img.shields.io/badge/status-beta-green?style=for-the-badge)
 ![license](https://img.shields.io/badge/license-GPL--3.0-blue?style=for-the-badge)
 
-![preview](http://localhost/src1/index.php)
+![preview](Screenshot%202026-03-30%20104105.png)
 
 ## 📌 Description and Objectives
 
@@ -20,10 +20,10 @@ Our goal is to give every organization the opportunity to promote itself not onl
 
 The project was developed by the group composed of:
 
-* Guerini
-* Bertasa
-* Mutti
-* Zecchini
+* Guerini(project leader, developer helper, central back)
+* Bertasa(developer fronthand/backhand, middelfielder)
+* Mutti(developer fronthand/backhand, right wing)
+* Zecchini(economist, document manager, bomber)
 
 ## 🛠️ Technologies Used
 
@@ -31,7 +31,7 @@ The project was developed using HTML for the page structure, CSS for styling and
 
 ## 🌐 Project Structure
 
-The repository is organized in a simple and modular way. The main file is `index.html`, which serves as the entry point of the entire website. Graphic and styling resources are stored in the `/css` folder, JavaScript scripts in the `/js` folder, and documentation related to the cookie policy in the `/docs` folder, specifically in the `cookie-policy.html` file.
+The repository is organized in a simple and modular way. The main file is `index.php`, that is contained in `/src1` folder, and documentation related to the cookie policy in the `/docs` folder, specifically in the `/ckprivacy.html` file.
 
 ## 🔐 Cookie Management and GDPR
 
@@ -41,11 +41,11 @@ A key aspect is that any tracking scripts or external services are activated onl
 
 ## 🚀 How to Run the Project
 
-To run the project, simply clone the repository from GitHub using the `git clone` command followed by the repository URL. Once the files are downloaded, you can start the project by opening the `index.html` file with any modern web browser, without the need for a server or additional configuration.
+To run the project, simply clone the repository: https://github.com/tommyguerini07/progetto-GPOI-5INFB-Guerini-Bertasa-Mutti-Zecchini from GitHub using the `git clone` command on your command prompt. Once the files are downloaded, you can start xampp on your device, once you have done it you can start the project by searching in any modern web browser `https://github.com/tommyguerini07/progetto-GPOI-5INFB-Guerini-Bertasa-Mutti-Zecchini/src1/index.php#`.
 
 ## 📚 Future Developments
 
-The project will be further expanded with additional features, including the creation of an administrative dashboard and the implementation of advanced analytics systems in full compliance with GDPR. The user interface can also be improved, along with a more advanced cookie preference management system through a dedicated modal.
+The project will be further expanded with additional features, including the creation of an administrative dashboard and the implementation of advanced analytics systems in full compliance with GDPR, we will implement other databases with the user and player data following our cookie policy. The user interface can also be improved, along with a more advanced cookie preference management system through a dedicated modal.
 
 ## 📬 Contacts
 
