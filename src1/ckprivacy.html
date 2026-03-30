@@ -1,77 +1,689 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Privacy & Cookies - Your App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polisportiva Albinese - Privacy & Cookie Policy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1, h2 { color: #333; }
-        .cookie-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        .cookie-table th, .cookie-table td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-        .cookie-table th { background-color: #f5f5f5; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1565c0;
+            --primary-dark: #0d47a1;
+            --primary-light: #e3f2fd;
+            --accent: #ffd600;
+            --text: #222;
+            --text-light: #555;
+            --white: #fff;
+            --shadow: 0 4px 12px rgba(21, 101, 192, 0.15);
+            --shadow-hover: 0 8px 24px rgba(21, 101, 192, 0.25);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f8fafc 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        body.dark-theme {
+            --primary: #0f4d9a;
+            --primary-dark: #0a3a72;
+            --primary-light: #4a76b5;
+            --accent: #ffbb33;
+            --text: #f5f6f7;
+            --text-light: #c1c8d1;
+            --white: #11161f;
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+            background: radial-gradient(circle at top right, #1b2a47 0%, #101826 35%, #0a0f17 100%);
+        }
+ 
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        body.dark-theme header {
+            background: rgba(17, 22, 31, 0.95);
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .logo-section:hover {
+            color: var(--primary-dark);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            background: var(--primary-light);
+            transform: scale(1.05);
+        }
+
+        body.dark-theme .theme-toggle {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        body.dark-theme .theme-toggle:hover {
+            background: rgba(255, 187, 51, 0.1);
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 60px 0;
+            margin-bottom: 50px;
+            box-shadow: var(--shadow-hover);
+        }
+
+        body.dark-theme .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        /* MAIN CONTENT */
+        main {
+            min-height: calc(100vh - 200px);
+            padding: 40px 0;
+        }
+
+        .section {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            scroll-margin-top: 100px;
+        }
+
+        body.dark-theme .section {
+            background: rgba(22, 34, 52, 0.8);
+            border: 1px solid rgba(120, 150, 190, 0.15);
+        }
+
+        .section:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .section h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h3 {
+            color: var(--primary);
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .section ul, .section ol {
+            margin: 20px 0 20px 25px;
+        }
+
+        .section li {
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        /* COOKIE TABLE */
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            overflow-x: auto;
+        }
+
+        .cookie-table thead th {
+            background: linear-gradient(135deg, var(--primary-light) 0%, rgba(21, 101, 192, 0.08) 100%);
+            color: var(--primary);
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid var(--primary);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body.dark-theme .cookie-table thead th {
+            background: rgba(75, 118, 181, 0.2);
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .cookie-table tbody td {
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(21, 101, 192, 0.1);
+            color: var(--text-light);
+        }
+
+        body.dark-theme .cookie-table tbody td {
+            border-bottom-color: rgba(120, 150, 190, 0.1);
+        }
+
+        .cookie-table tbody tr:hover {
+            background: rgba(21, 101, 192, 0.05);
+        }
+
+        body.dark-theme .cookie-table tbody tr:hover {
+            background: rgba(75, 118, 181, 0.1);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .badge-essential {
+            background: rgba(76, 175, 80, 0.15);
+            color: #2e7d32;
+        }
+
+        .badge-optional {
+            background: rgba(255, 152, 0, 0.15);
+            color: #f57c00;
+        }
+
+        body.dark-theme .badge-essential {
+            background: rgba(76, 175, 80, 0.25);
+        }
+
+        body.dark-theme .badge-optional {
+            background: rgba(255, 152, 0, 0.25);
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: rgba(21, 101, 192, 0.1);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-light);
+        }
+
+        body.dark-theme .btn-secondary {
+            background: rgba(75, 118, 181, 0.15);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        body.dark-theme .btn-secondary:hover {
+            background: rgba(75, 118, 181, 0.3);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--white);
+            color: var(--text);
+            padding: 40px 0 20px;
+            text-align: center;
+            margin-top: 60px;
+            border-top: 1px solid rgba(21, 101, 192, 0.1);
+        }
+
+        body.dark-theme footer {
+            background: rgba(17, 22, 31, 0.8);
+            border-top-color: rgba(120, 150, 190, 0.15);
+        }
+
+        footer p {
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        footer a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        body.dark-theme footer a {
+            color: var(--accent);
+        }
+
+        body.dark-theme footer a:hover {
+            color: #fff;
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            background: rgba(21, 101, 192, 0.05);
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+
+        body.dark-theme .breadcrumb {
+            background: rgba(75, 118, 181, 0.1);
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .cookie-table {
+                font-size: 0.9rem;
+            }
+
+            .cookie-table tbody td {
+                padding: 10px 8px;
+            }
+
+            .header-content {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .logo-section {
+                width: 100%;
+            }
+        }
+
+        /* PRINT STYLES */
+        @media print {
+            body {
+                background: white;
+            }
+
+            header, footer, .theme-toggle {
+                display: none;
+            }
+
+            .section {
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+        }
     </style>
 </head>
-<body>
-    <h1>Privacy & Cookie Policy</h1>
-    
-    <h2>1. Cookies We Use</h2>
-    <table class="cookie-table">
-        <tr>
-            <th>Cookie</th>
-            <th>Purpose</th>
-            <th>Duration</th>
-            <th>Essential?</th>
-        </tr>
-        <tr>
-            <td>Firebase Session</td>
-            <td>User authentication and security</td>
-            <td>Session</td>
-            <td>Yes (site won't work without)</td>
-        </tr>
-        <tr>
-            <td>Google Analytics</td>
-            <td>Understanding how users interact with our app</td>
-            <td>2 years</td>
-            <td>No (requires your consent)</td>
-        </tr>
-    </table>
-    
-    <h2>2. Your Choices</h2>
-    <p>You can manage cookies in your browser settings:</p>
-    <ul>
-        <li><strong>Chrome:</strong> Settings → Privacy and security → Cookies</li>
-        <li><strong>Firefox:</strong> Options → Privacy & Security → Cookies</li>
-        <li><strong>Safari:</strong> Preferences → Privacy → Cookies</li>
-    </ul>
-    
-    <p>To change your consent for this site: 
-       <button onclick="resetConsent()">Reset Cookie Preferences</button>
-    </p>
-    
-    <h2>3. Firebase Services We Use</h2>
-    <ul>
-        <li><strong>Firebase Authentication:</strong> To securely log you in</li>
-        <li><strong>Firestore Database:</strong> To store your app data</li>
-        <li><strong>Firebase Analytics (optional):</strong> To improve the app</li>
-    </ul>
+<body id="privacyBody">
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.php" class="logo-section">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Privacy & Cookie</span>
+                </a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambia tema" title="Cambia tema scuro/chiaro">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
 
-    <h2>3.1 Firebase Authentication Note</h2>
-    <p>Firebase Auth primarly uses:</p>
-    <ul>
-        <li><strong>localStorage/sessionStorage</strong> for tokens (not cookies)</li>
-        <li><strong>IndexdDB</strong> for offline persistence</li>
-        <li><strong>__session cookie</strong> only for Firebase Hosting + Cloud Functions</li>
-    </ul>
-    
-    <h2>4. Contact</h2>
-    <p>Questions? Email: privacy@yourapp.com</p>
-    
+    <section class="hero">
+        <div class="container">
+            <h1><i class="fas fa-lock"></i> Privacy & Cookie Policy</h1>
+            <p>Informazioni sulla gestione dei tuoi dati personali e delle preferenze</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="index.php">Home</a> / <span>Privacy e Cookie</span>
+        </div>
+
+        <!-- SEZIONE 1: COOKIE USATI -->
+        <section class="section" id="cookies">
+            <h2><i class="fas fa-cookie"></i> I Cookie Che Utilizziamo</h2>
+            
+            <p>I cookie sono piccoli file di testo che vengono memorizzati sul tuo dispositivo quando visiti il nostro sito. Li utilizziamo per migliorare la tua esperienza di navigazione e, laddove applicabile, rispettare i tuoi diritti sulla privacy secondo il GDPR.</p>
+
+            <h3>Tabella dei Cookie</h3>
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th>Nome Cookie</th>
+                        <th>Scopo</th>
+                        <th>Durata</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>PHPSESSID</strong></td>
+                        <td>Autenticazione e gestione della sessione utente per i login</td>
+                        <td>Sessione (fino al logout)</td>
+                        <td><span class="badge badge-essential">Essenziale</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>cookieConsent</strong></td>
+                        <td>Memorizza le tue preferenze di consenso ai cookie</td>
+                        <td>12 mesi</td>
+                        <td><span class="badge badge-essential">Essenziale</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>theme</strong></td>
+                        <td>Salva la tua preferenza di tema (modalità scura/chiara)</td>
+                        <td>12 mesi</td>
+                        <td><span class="badge badge-optional">Preferenza</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Spiegazione dei Tipi</h3>
+            <ul>
+                <li><strong>Cookie Essenziali:</strong> Necessari per il corretto funzionamento del sito. Non possono essere disabilitati.</li>
+                <li><strong>Cookie di Preferenza:</strong> Ricordano le tue scelte (es. tema) per migliorare l'esperienza.</li>
+            </ul>
+        </section>
+
+        <!-- SEZIONE 2: STORAGE LOCALE -->
+        <section class="section" id="storage">
+            <h2><i class="fas fa-database"></i> Memoria Locale del Browser</h2>
+            
+            <p>Oltre ai cookie, utilizziamo il <strong>localStorage</strong> del tuo browser per memorizzare i tuoi dati di preferenza. Questi dati rimangono localmente sul tuo dispositivo.</p>
+
+            <h3>Dati Memorizzati</h3>
+            <ul>
+                <li><code>cookieConsent</code> - Le tue preferenze di consenso ai cookie (formato JSON)</li>
+                <li><code>theme</code> - La tua preferenza di tema (light o dark)</li>
+            </ul>
+
+            <p><strong>Come puoi cancellare questi dati?</strong></p>
+            <ul>
+                <li>Apri la Console del Browser (F12 o Ctrl+Shift+J)</li>
+                <li>Digita: <code>localStorage.clear()</code></li>
+                <li>Premi Invio e ricarica la pagina</li>
+            </ul>
+        </section>
+
+        <!-- SEZIONE 3: TUO CONTROLLO -->
+        <section class="section" id="controllo">
+            <h2><i class="fas fa-toggle-on"></i> Il Tuo Controllo sui Cookie</h2>
+            
+            <h3>Reimpostare le Preferenze di Cookie</h3>
+            <p>Se desideri cambiare le tue preferenze di consenso ai cookie, puoi reimpostale qui:</p>
+            <button class="btn btn-primary" onclick="resetConsent()">
+                <i class="fas fa-redo"></i> Reimposta Preferenze Cookie
+            </button>
+
+            <h3>Impostazioni del Browser</h3>
+            <p>Puoi anche gestire i cookie direttamente dalle impostazioni del tuo browser:</p>
+            <ul>
+                <li><strong>Chrome:</strong> Impostazioni → Privacy e sicurezza → Cookie</li>
+                <li><strong>Firefox:</strong> Preferenze → Privacy e protezi → Cookie</li>
+                <li><strong>Safari:</strong> Preferenze → Privacy → Gestisci dati sito web</li>
+                <li><strong>Edge:</strong> Impostazioni → Privacy → Cookie e altri dati del sito</li>
+            </ul>
+        </section>
+
+        <!-- SEZIONE 4: PRIVACY GDPR -->
+        <section class="section" id="gdpr">
+            <h2><i class="fas fa-eur-sign"></i> GDPR e Privacy</h2>
+            
+            <p>Il nostro sito rispetta il Regolamento Generale sulla Protezione dei Dati (GDPR - Regolamento UE 2016/679). La protezione della tua privacy è una priorità.</p>
+
+            <h3>I Tuoi Diritti</h3>
+            <ul>
+                <li><strong>Diritto di accesso:</strong> Puoi chiedere l'accesso ai tuoi dati personali</li>
+                <li><strong>Diritto di rettifica:</strong> Puoi chiedere la correzione di dati inesatti</li>
+                <li><strong>Diritto all'oblio:</strong> Puoi chiedere la cancellazione dei tuoi dati (diritto all'oblio)</li>
+                <li><strong>Diritto di portabilità:</strong> Puoi chiedere di ricevere i tuoi dati in formato strutturato</li>
+                <li><strong>Diritto di opposizione:</strong> Puoi opporti al trattamento dei tuoi dati</li>
+                <li><strong>Diritto di revoca del consenso:</strong> Puoi ritirare il tuo consenso in qualsiasi momento</li>
+            </ul>
+
+            <h3>Consenso ai Cookie</h3>
+            <p>Al tuo primo accesso, ti mostreremo un banner di consenso. Puoi scegliere:</p>
+            <ul>
+                <li><strong>Solo essenziali:</strong> Accettiamo solo i cookie necessari al funzionamento</li>
+                <li><strong>Accetta tutti:</strong> Autorizzi tutti i cookie, inclusi quelli di preferenza</li>
+                <li><strong>Rifiuta:</strong> Rifiuti i cookie opzionali</li>
+            </ul>
+
+            <p>Puoi cambiare la tua scelta in qualsiasi momento usando il pulsante "Reimposta Preferenze" sopra.</p>
+        </section>
+
+        <!-- SEZIONE 5: CONTATTI -->
+        <section class="section" id="contatti">
+            <h2><i class="fas fa-envelope"></i> Contatti e Domande</h2>
+            
+            <p>Se hai domande sulla nostra politica sui cookie e la privacy, contattaci:</p>
+            <ul>
+                <li>📧 <a href="mailto:info@polisportivaalbinese.it">info@polisportivaalbinese.it</a></li>
+                <li>📍 <a href="contatti.php">Pagina Contatti</a></li>
+                <li>🔗 <a href="index.php">Torna alla Home</a></li>
+            </ul>
+
+            <p style="margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(21, 101, 192, 0.1); font-size: 0.9rem; color: var(--text-light);">
+                <strong>Ultimo aggiornamento:</strong> 30 Marzo 2026 | <strong>Versione:</strong> 1.0
+            </p>
+        </section>
+
+        <!-- SEZIONE 6: TECHNICAL INFO -->
+        <section class="section" id="technical">
+            <h2><i class="fas fa-code"></i> Informazioni Tecniche</h2>
+            
+            <h3>Tecnologie Utilizzate</h3>
+            <ul>
+                <li><strong>HTML/CSS/JavaScript:</strong> Frontend e interattività</li>
+                <li><strong>PHP:</strong> Gestione server-side e sessioni</li>
+                <li><strong>MySQL:</strong> Database per dati utenti</li>
+                <li><strong>LocalStorage:</strong> Memoria client per preferenze</li>
+            </ul>
+
+            <h3>Sicurezza</h3>
+            <p>I tuoi dati di sessione sono protetti da meccanismi di sicurezza standard. Le credenziali vengono validate lato server e i dati sensibili non vengono mai trasmessi via cookie non sicuri.</p>
+
+            <p><strong>Note sulla sicurezza:</strong></p>
+            <ul>
+                <li>Utilizza sempre una connessione HTTPS quando disponibile</li>
+                <li>Non condividere il tuo account con altri utenti</li>
+                <li>Logout sempre quando finisci di usare il sito su dispositivi condivisi</li>
+                <li>Tieni aggiornato il tuo browser per una migliore sicurezza</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Polisportiva Albinese - Tutti i diritti riservati</p>
+            <p>
+                <a href="index.php">Home</a> | 
+                <a href="ckprivacy.html">Privacy</a> | 
+                <a href="contatti.php">Contatti</a>
+            </p>
+            <p style="font-size: 0.85rem; margin-top: 15px;">
+                <i class="fas fa-info-circle"></i> Questo sito rispetta il GDPR (Regolamento UE 2016/679)
+            </p>
+        </div>
+    </footer>
+
     <script>
-    function resetConsent() {
-        localStorage.removeItem('cookieConsent');
-        alert('Cookie preferences reset. Page will reload.');
-        window.location.reload();
-    }
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.getElementById('privacyBody');
+
+        // Controlla il tema salvato
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-theme');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            if (body.classList.contains('dark-theme')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+
+        // Reimposta Cookie Consent
+        function resetConsent() {
+            localStorage.removeItem('cookieConsent');
+            
+            const message = document.createElement('div');
+            message.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #4caf50;
+                color: white;
+                padding: 15px 25px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                z-index: 9999;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 600;
+            `;
+            message.textContent = '✓ Preferenze reimpostate! Ricarica la pagina...';
+            document.body.appendChild(message);
+
+            setTimeout(() => {
+                window.location.reload();
+            }, 1500);
+        }
+
+        // Smooth scroll per i link interni
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Tracking per analytics (facoltativo)
+        console.log('%c🛡️ Privacy Page Loaded', 'color: #1565c0; font-size: 14px; font-weight: bold;');
     </script>
 </body>
 </html>
