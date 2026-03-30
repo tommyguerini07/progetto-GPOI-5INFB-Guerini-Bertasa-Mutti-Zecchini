@@ -93,7 +93,7 @@ A key aspect is that any tracking scripts or external services are activated onl
 
 ## 🚀 How to Run the Project
 
-To run the project, simply clone the repository: https://github.com/tommyguerini07/progetto-GPOI-5INFB-Guerini-Bertasa-Mutti-Zecchini from GitHub using the `git clone` command on your command prompt. Once the files are downloaded, you can start xampp on your device, once you have done it you can start the project by searching in any modern web browser `https://github.com/tommyguerini07/progetto-GPOI-5INFB-Guerini-Bertasa-Mutti-Zecchini/src1/index.php#`.
+To run the project, simply clone the repository: https://github.com/tommyguerini07/progetto-GPOI-5INFB-Guerini-Bertasa-Mutti-Zecchini from GitHub using the `git clone` command on your command prompt. Once the files are downloaded, you can start xampp on your device, and import the file data/albineseDB.sql in phpMyAdmin; once you have done it you can start the project by searching in any modern web browser `https://github.com/tommyguerini07/progetto-GPOI-5INFB-Guerini-Bertasa-Mutti-Zecchini/src1/index.php`.
 
 ## 📚 Future Developments
 
