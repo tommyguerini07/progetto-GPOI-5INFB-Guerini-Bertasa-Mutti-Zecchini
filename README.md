@@ -9,7 +9,7 @@ GPOI project – Polisportive Bergamo website
 ![status](https://img.shields.io/badge/status-beta-green?style=for-the-badge)
 ![license](https://img.shields.io/badge/license-GPL--3.0-blue?style=for-the-badge)
 
-![preview](Screenshot%202026-03-30%20104105.png)
+(![Anteprima sito](./assets/Screenshot%202026-03-30%20104105.png))
 
 ## 📌 Description and Objectives
 
