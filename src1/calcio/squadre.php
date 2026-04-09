@@ -22,7 +22,7 @@
             </button>
             <ul class="menu" id="mainMenu">
                 <li class="dropdown">
-                    <a href="../index.php">Home</a>
+                    <a href="../pages/index.php">Home</a>
                 </li>
                 <li class="dropdown">
                     <a href="#calcio" class="active">Calcio <i class="fas fa-chevron-down"></i></a>
@@ -38,8 +38,8 @@
                         <li><a href="../pallavolo/calendario.php">Calendario</a></li>
                     </ul>
                 </li>
-                <li><a href="../galleria.php">Galleria</a></li>
-                <li><a href="../contatti.php">Contatti</a></li>
+                <li><a href="../pages/galleria.php">Galleria</a></li>
+                <li><a href="../pages/contatti.php">Contatti</a></li>
             </ul>
         </nav>
     </header>

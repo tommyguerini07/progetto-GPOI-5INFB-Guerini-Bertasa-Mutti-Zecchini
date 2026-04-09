@@ -89,7 +89,7 @@ session_start();
                         <div class="match-result">
                             <div class="team">
                                 <div class="team-logo">A</div>
-                                <div class="team-name">Albinese</<div>
+                                <div class="team-name">Albinese</div>
                             </div>
                             <div class="score">2 - 2</div>
                             <div class="team">

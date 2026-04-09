@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="login-card">
             <h2>Accedi</h2>
             
-            <form action="#" method="POST">
+            <form action="login.php" method="POST">
                 <div class="form-group">
                     <label for="email">E-mail</label>
                     <input type="email" id="email" name="email" required>
@@ -80,10 +80,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
         </div>
-    </div>
-
-</body>
-</html>
     </div>
 
 </body>

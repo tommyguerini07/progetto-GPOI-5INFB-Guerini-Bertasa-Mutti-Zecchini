@@ -32,7 +32,7 @@ $teamName = $teamNames[$team] ?? str_replace('_', ' ', ucfirst($team));
         </button>
         <ul class="menu" id="mainMenu">
             <li>
-                <a href="../index.php">Home</a>
+                <a href="../pages/index.php">Home</a>
             </li>
             <li class="dropdown">
                 <a href="../calcio/squadre.php">Calcio <i class="fas fa-chevron-down"></i></a>
@@ -48,8 +48,8 @@ $teamName = $teamNames[$team] ?? str_replace('_', ' ', ucfirst($team));
                     <li><a href="calendario.php">Calendario</a></li>
                 </ul>
             </li>
-            <li><a href="../galleria.php">Galleria</a></li>
-            <li><a href="../contatti.php">Contatti</a></li>
+            <li><a href="../pages/galleria.php">Galleria</a></li>
+            <li><a href="../pages/contatti.php">Contatti</a></li>
         </ul>
     </nav>
 </header>

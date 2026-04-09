@@ -35,7 +35,7 @@
 <ul class="menu" id="mainMenu">
 
 <li>
-<a href="../index.php">Home</a>
+<a href="../pages/index.php">Home</a>
 </li>
 
 <li class="dropdown">
@@ -58,8 +58,8 @@
 
 </li>
 
-<li><a href="../galleria.php">Galleria</a></li>
-<li><a href="../contatti.php">Contatti</a></li>
+<li><a href="../pages/galleria.php">Galleria</a></li>
+<li><a href="../pages/contatti.php">Contatti</a></li>
 
 </ul>
 
