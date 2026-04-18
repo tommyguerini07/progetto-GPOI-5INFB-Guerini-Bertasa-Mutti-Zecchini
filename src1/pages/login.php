@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$conn = new mysqli("localhost", "root", "", "albineseDB");
+$conn = new mysqli("localhost", "root", "", "albineseDB", 3307);
 
 if ($conn->connect_error) {
     die("Errore di connessione: " . $conn->connect_error);
